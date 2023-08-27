@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct FlashCardApp: App {
+    let flashCard = FlashCard()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(flashCard: flashCard)
         }
     }
 }

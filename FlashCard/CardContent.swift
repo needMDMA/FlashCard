@@ -9,9 +9,16 @@ import Foundation
 
 struct CardContent {
     
+    enum category {
+        case new, beginner, learned, mastered
+    }
+    
     struct Card: Identifiable {
-        let frenchWord = ""
-        let koreanWord = ""
+        var currentCategory = category.new
+        let word: String
+        let traduction: String
+        var wrongCount: Int = 0
+        var correctCount: Int = 0
         let id: Int
     }
 }

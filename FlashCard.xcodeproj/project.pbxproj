@@ -15,7 +15,7 @@
 		8B37ADB12A94153900BEE965 /* FlashCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B37ADB02A94153900BEE965 /* FlashCardUITests.swift */; };
 		8B37ADB32A94153900BEE965 /* FlashCardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B37ADB22A94153900BEE965 /* FlashCardUITestsLaunchTests.swift */; };
 		8BC787EC2A958A800021C6E6 /* CardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC787EB2A958A800021C6E6 /* CardContent.swift */; };
-		8BC787EE2A958B610021C6E6 /* FrKoFlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC787ED2A958B610021C6E6 /* FrKoFlashCard.swift */; };
+		8BC787EE2A958B610021C6E6 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC787ED2A958B610021C6E6 /* FlashCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,7 @@
 		8B37ADB02A94153900BEE965 /* FlashCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardUITests.swift; sourceTree = "<group>"; };
 		8B37ADB22A94153900BEE965 /* FlashCardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8BC787EB2A958A800021C6E6 /* CardContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContent.swift; sourceTree = "<group>"; };
-		8BC787ED2A958B610021C6E6 /* FrKoFlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrKoFlashCard.swift; sourceTree = "<group>"; };
+		8BC787ED2A958B610021C6E6 /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,7 @@
 				8B37AD952A94153800BEE965 /* FlashCardApp.swift */,
 				8B37AD972A94153800BEE965 /* ContentView.swift */,
 				8BC787EB2A958A800021C6E6 /* CardContent.swift */,
-				8BC787ED2A958B610021C6E6 /* FrKoFlashCard.swift */,
+				8BC787ED2A958B610021C6E6 /* FlashCard.swift */,
 				8B37AD992A94153900BEE965 /* Assets.xcassets */,
 				8B37AD9B2A94153900BEE965 /* Preview Content */,
 			);
@@ -263,7 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BC787EE2A958B610021C6E6 /* FrKoFlashCard.swift in Sources */,
+				8BC787EE2A958B610021C6E6 /* FlashCard.swift in Sources */,
 				8BC787EC2A958A800021C6E6 /* CardContent.swift in Sources */,
 				8B37AD982A94153800BEE965 /* ContentView.swift in Sources */,
 				8B37AD962A94153800BEE965 /* FlashCardApp.swift in Sources */,
