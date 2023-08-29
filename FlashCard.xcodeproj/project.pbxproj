@@ -16,6 +16,8 @@
 		8B37ADB32A94153900BEE965 /* FlashCardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B37ADB22A94153900BEE965 /* FlashCardUITestsLaunchTests.swift */; };
 		8BC787EC2A958A800021C6E6 /* CardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC787EB2A958A800021C6E6 /* CardContent.swift */; };
 		8BC787EE2A958B610021C6E6 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC787ED2A958B610021C6E6 /* FlashCard.swift */; };
+		8BD297DA2A9D48DD00166209 /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD297D92A9D48DD00166209 /* FlashCardView.swift */; };
+		8BD297DC2A9D6B9700166209 /* deckBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD297DB2A9D6B9700166209 /* deckBaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		8B37ADB22A94153900BEE965 /* FlashCardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8BC787EB2A958A800021C6E6 /* CardContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContent.swift; sourceTree = "<group>"; };
 		8BC787ED2A958B610021C6E6 /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
+		8BD297D92A9D48DD00166209 /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
+		8BD297DB2A9D6B9700166209 /* deckBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deckBaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 			children = (
 				8B37AD952A94153800BEE965 /* FlashCardApp.swift */,
 				8B37AD972A94153800BEE965 /* ContentView.swift */,
+				8BD297D92A9D48DD00166209 /* FlashCardView.swift */,
+				8BD297DB2A9D6B9700166209 /* deckBaseView.swift */,
 				8BC787EB2A958A800021C6E6 /* CardContent.swift */,
 				8BC787ED2A958B610021C6E6 /* FlashCard.swift */,
 				8B37AD992A94153900BEE965 /* Assets.xcassets */,
@@ -266,6 +272,8 @@
 				8BC787EE2A958B610021C6E6 /* FlashCard.swift in Sources */,
 				8BC787EC2A958A800021C6E6 /* CardContent.swift in Sources */,
 				8B37AD982A94153800BEE965 /* ContentView.swift in Sources */,
+				8BD297DA2A9D48DD00166209 /* FlashCardView.swift in Sources */,
+				8BD297DC2A9D6B9700166209 /* deckBaseView.swift in Sources */,
 				8B37AD962A94153800BEE965 /* FlashCardApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

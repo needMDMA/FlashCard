@@ -9,19 +9,21 @@ import Foundation
 
 class FlashCard: ObservableObject {
     
-    @Published var cards: [CardContent.Card] = []
+    @Published private(set) var model: CardContent
     
     init() {
-        cards.append(CardContent.Card(word: "Dog", traduction: "Chien", id: 0))
-        cards.append(CardContent.Card(word: "Cat", traduction: "Chat", id: 1))
+        model = CardContent()
     }
     
     func addWord(word: String, traduction: String) {
-        cards.append(CardContent.Card(word: word, traduction: traduction, id: cards.count))
+        model.addWord(word: word, traduction: traduction)
     }
     
-    func promoteWord(id: Int) {
-        cards[id].currentCategory = CardContent.category.beginner
+    func promoteWord(card: CardContent.Card) {
+        model.promoteWord(card: card)
     }
     
+    func downgradeWord(card: CardContent.Card) {
+        model.downgradeWord(card: card)
+    }
 }

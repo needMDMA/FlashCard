@@ -14,7 +14,7 @@ struct word: Identifiable {
 }
 
 struct ContentView: View {
-    @ObservedObject var flashCard: FlashCard
+    @EnvironmentObject var flashCard: FlashCard
     @State var newWord = ""
     @State var newWordTraduction = ""
     @State private var showingPopover = false
@@ -31,8 +31,10 @@ struct ContentView: View {
             
             ScrollView {
                 VStack(spacing: -20) {
-                    deck(currentCategory: .new)
-                    deck(currentCategory: .beginner)
+                    deck(level: CardContent.level.beginner)
+                    deck(level: CardContent.level.intermediate)
+                    deck(level: CardContent.level.advanced)
+                    deck(level: CardContent.level.expert)
                 }
             }
         }
@@ -56,86 +58,45 @@ struct ContentView: View {
     }
     
     @ViewBuilder
-    func deck(currentCategory: CardContent.category) -> some View {
+    func deck(level: CardContent.level) -> some View {
         ZStack {
             ZStack {
-                ForEach(flashCard.cards) { card in
-                    if card.currentCategory == currentCategory {
-                        cardView(flashCard: flashCard, word: card.word, traduction: card.traduction)
+                deckBaseView(level: level).padding()
+                ForEach(flashCard.model.cards) { card in
+                    if card.currentLevel == level {
+                        FlashCardView(card: card)
                             .offset(y: Double(card.id) * -3) //figure out the offset
                             .padding()
                     }
                 }
             }
-            badge
+            badge(level: level)
         }.padding(.vertical)
     }
     
-    var badge: some View {
+    @ViewBuilder
+    func badge(level: CardContent.level) -> some View {
+        let numberOfcard = numberOfCard(in: level)
         ZStack {
             Circle().scale(0.25)
-            //Text("\(flashCard.word)").bold().foregroundColor(.white)
+            Circle().scale(0.24).foregroundColor(.white)
+            Text(numberOfcard).bold()
         }.offset(x: -130, y: -80)
     }
-}
-
-struct cardView: View {
-    let flashCard: FlashCard
-    let word: String
-    let traduction: String
-    @State var guess = "tap for answer"
     
-    var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 40.0).foregroundColor(.white)
-            RoundedRectangle(cornerRadius: 40.0).stroke(lineWidth: 1)
-            VStack {
-                Text(word).font(.title).padding()
-                HStack {
-                    Spacer()
-                    wrongButton
-                    Spacer()
-                    traductionButton
-                    Spacer()
-                    correctButton
-                    Spacer()
-                }
+    func numberOfCard(in level: CardContent.level) -> String {
+        var numberOfCard = 0
+        for card in flashCard.model.cards {
+            if card.currentLevel == level {
+                numberOfCard += 1
             }
-            Circle().scale(0.05).offset(x: 140, y: -50).foregroundColor(.green)
-            Circle().scale(0.05).offset(x: 130, y: -50).foregroundColor(.red)
         }
-        .aspectRatio(5/2, contentMode: .fill)
+        return "\(numberOfCard)"
     }
-    
-    var traductionButton: some View {
-        Button {
-            guess = traduction
-        } label: {
-            Text(guess)
-        }
-    }
-    
-    var correctButton: some View {
-        Button {
-            flashCard.promoteWord(id: 0)
-        }label: {
-            Image(systemName: "checkmark")
-        }
-    }
-    
-    var wrongButton: some View {
-        Button {
-            
-        } label: {
-            Image(systemName: "xmark")
-        }
-    }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let flashCard = FlashCard()
-        ContentView(flashCard: flashCard)
+        ContentView().environmentObject(FlashCard())
     }
 }
