@@ -9,13 +9,17 @@ import Foundation
 
 class FlashCard: ObservableObject {
     
+    enum level: Int, CaseIterable {
+        case beginner = 0, intermediate ,advanced ,expert
+    }
+    
     @Published private(set) var model: CardContent
     
     init() {
         model = CardContent()
     }
     
-    func getCards(for level: CardContent.level) -> [CardContent.Card] {
+    func getCards(for level: level) -> [CardContent.Card] {
         var cards: [CardContent.Card] = []
         print(level)
         for card in model.cards {
