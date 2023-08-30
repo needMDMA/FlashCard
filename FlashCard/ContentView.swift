@@ -62,14 +62,15 @@ struct ContentView: View {
         ZStack {
             ZStack {
                 deckBaseView(level: level).padding()
-                ForEach(flashCard.model.cards) { card in
+                let cards = flashCard.getCards(for: level)
+                ForEach(cards) { card in
                     if card.currentLevel == level {
                         FlashCardView(card: card)
-                            .offset(y: Double(card.id) * -3) //figure out the offset
+                            .offset(y: Double(card.id) * -3)
                             .padding()
+                        }
                     }
                 }
-            }
             badge(level: level)
         }.padding(.vertical)
     }

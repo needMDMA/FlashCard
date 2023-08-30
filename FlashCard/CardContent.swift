@@ -8,7 +8,7 @@
 import Foundation
 
 struct CardContent {
-    enum level: Int {
+    enum level: Int, CaseIterable {
         case beginner = 0, intermediate ,advanced ,expert
     }
     
@@ -26,22 +26,38 @@ struct CardContent {
     }
     
     mutating func promoteWord(card: Card) {
-        if let promotedLevel = level(rawValue: (card.currentLevel.rawValue + 1)) {
-            cards[card.id].currentLevel = promotedLevel
+        let id = card.id
+        if cards[id].currentLevel == .expert {
+            return
+        }
+        
+        if cards[id].score < 2 {
+            cards[id].score += 1
+        }
+        if cards[id].score == 2 {
+            cards[id].score = 0
+            if let promotedLevel = level(rawValue: (card.currentLevel.rawValue + 1)) {
+                cards[id].currentLevel = promotedLevel
+            }
         }
     }
     mutating func downgradeWord(card: Card) {
-        if let downgradeLevel = level(rawValue: (card.currentLevel.rawValue - 1)) {
-            cards[card.id].currentLevel = downgradeLevel
+        let id = card.id
+        if cards[id].score > 0 {
+            cards[id].score -= 1
+        }
+        if cards[id].score == 0 {
+            if let downgradeLevel = level(rawValue: (card.currentLevel.rawValue - 1)) {
+                cards[card.id].currentLevel = downgradeLevel
+            }
         }
     }
     
     struct Card: Identifiable {
         var currentLevel = level.beginner
+        var score: Int = 0
         let word: String
         let traduction: String
-        var wrongCount: Int = 0
-        var correctCount: Int = 0
         let id: Int
     }
 }

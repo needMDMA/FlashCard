@@ -10,8 +10,6 @@ import SwiftUI
 struct FlashCardView: View {
     let card: CardContent.Card
     @EnvironmentObject var flashCard: FlashCard
-//    let word: String
-//    let traduction: String
     @State var showTraduction = false
     
     var body: some View {
@@ -27,10 +25,20 @@ struct FlashCardView: View {
                 correctButton
                 Spacer()
             }.bold()
-            Circle().scale(0.05).offset(x: 140, y: -50).foregroundColor(.green)
-            Circle().scale(0.05).offset(x: 130, y: -50).foregroundColor(.red)
+            Circle()
+                .scale(0.05)
+                .offset(x: 140, y: -50)
+                .foregroundColor(.green)
+                .opacity(isPromotable)
         }
         .aspectRatio(5/2, contentMode: .fill)
+    }
+    
+    var isPromotable: Double {
+        if card.score > 0 {
+            return 1
+        }
+        return 0
     }
     
     var traductionButton: some View {
@@ -42,6 +50,7 @@ struct FlashCardView: View {
             } else {
                 Text(card.word)
             }
+            Text("\(card.score)")
         }
             .font(.largeTitle)
             .autocorrectionDisabled()

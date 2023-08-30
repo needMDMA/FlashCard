@@ -15,6 +15,18 @@ class FlashCard: ObservableObject {
         model = CardContent()
     }
     
+    func getCards(for level: CardContent.level) -> [CardContent.Card] {
+        var cards: [CardContent.Card] = []
+        print(level)
+        for card in model.cards {
+            if card.currentLevel == level {
+                cards.append(card)
+            }
+        }
+        print(cards)
+        return cards
+    }
+    
     func addWord(word: String, traduction: String) {
         model.addWord(word: word, traduction: traduction)
     }
