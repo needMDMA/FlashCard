@@ -74,7 +74,7 @@ struct FlashCardView: View {
     }
     
     
-    func cardColor(level: CardContent.level) -> Color {
+    func cardColor(level: Constant.level) -> Color {
         switch level {
         case .beginner:
             return .red

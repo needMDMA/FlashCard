@@ -31,10 +31,10 @@ struct ContentView: View {
             
             ScrollView {
                 VStack(spacing: -20) {
-                    deck(level: CardContent.level.beginner)
-                    deck(level: CardContent.level.intermediate)
-                    deck(level: CardContent.level.advanced)
-                    deck(level: CardContent.level.expert)
+                    deck(level: Constant.level.beginner)
+                    deck(level: Constant.level.intermediate)
+                    deck(level: Constant.level.advanced)
+                    deck(level: Constant.level.expert)
                 }
             }
         }
@@ -58,7 +58,7 @@ struct ContentView: View {
     }
     
     @ViewBuilder
-    func deck(level: CardContent.level) -> some View {
+    func deck(level: Constant.level) -> some View {
         ZStack {
             ZStack {
                 deckBaseView(level: level).padding()
@@ -76,7 +76,7 @@ struct ContentView: View {
     }
     
     @ViewBuilder
-    func badge(level: CardContent.level) -> some View {
+    func badge(level: Constant.level) -> some View {
         let numberOfcard = numberOfCard(in: level)
         ZStack {
             Circle().scale(0.25)
@@ -85,7 +85,7 @@ struct ContentView: View {
         }.offset(x: -130, y: -80)
     }
     
-    func numberOfCard(in level: CardContent.level) -> String {
+    func numberOfCard(in level: Constant.level) -> String {
         var numberOfCard = 0
         for card in flashCard.model.cards {
             if card.currentLevel == level {
