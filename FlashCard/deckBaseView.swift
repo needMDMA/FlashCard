@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct deckBaseView: View {
-    let level: CardContent.level
+    let level: Constant.level
     let cornerRadius: CGFloat = 40.0
     
     var body: some View {
@@ -49,6 +49,6 @@ struct deckBaseView: View {
 
 struct deckBaseView_Previews: PreviewProvider {
     static var previews: some View {
-        deckBaseView(level: CardContent.level.beginner)
+        deckBaseView(level: Constant.level.beginner)
     }
 }

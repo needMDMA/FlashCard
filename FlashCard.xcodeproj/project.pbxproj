@@ -14,6 +14,7 @@
 		8B37ADA72A94153900BEE965 /* FlashCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B37ADA62A94153900BEE965 /* FlashCardTests.swift */; };
 		8B37ADB12A94153900BEE965 /* FlashCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B37ADB02A94153900BEE965 /* FlashCardUITests.swift */; };
 		8B37ADB32A94153900BEE965 /* FlashCardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B37ADB22A94153900BEE965 /* FlashCardUITestsLaunchTests.swift */; };
+		8BA5CBD62AA01EBD000502C0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5CBD52AA01EBD000502C0 /* Constant.swift */; };
 		8BC787EC2A958A800021C6E6 /* CardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC787EB2A958A800021C6E6 /* CardContent.swift */; };
 		8BC787EE2A958B610021C6E6 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC787ED2A958B610021C6E6 /* FlashCard.swift */; };
 		8BD297DA2A9D48DD00166209 /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD297D92A9D48DD00166209 /* FlashCardView.swift */; };
@@ -48,6 +49,7 @@
 		8B37ADAC2A94153900BEE965 /* FlashCardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashCardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B37ADB02A94153900BEE965 /* FlashCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardUITests.swift; sourceTree = "<group>"; };
 		8B37ADB22A94153900BEE965 /* FlashCardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8BA5CBD52AA01EBD000502C0 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		8BC787EB2A958A800021C6E6 /* CardContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContent.swift; sourceTree = "<group>"; };
 		8BC787ED2A958B610021C6E6 /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
 		8BD297D92A9D48DD00166209 /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		8B37AD942A94153800BEE965 /* FlashCard */ = {
 			isa = PBXGroup;
 			children = (
+				8BA5CBD52AA01EBD000502C0 /* Constant.swift */,
 				8B37AD952A94153800BEE965 /* FlashCardApp.swift */,
 				8B37AD972A94153800BEE965 /* ContentView.swift */,
 				8BD297D92A9D48DD00166209 /* FlashCardView.swift */,
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA5CBD62AA01EBD000502C0 /* Constant.swift in Sources */,
 				8BC787EE2A958B610021C6E6 /* FlashCard.swift in Sources */,
 				8BC787EC2A958A800021C6E6 /* CardContent.swift in Sources */,
 				8B37AD982A94153800BEE965 /* ContentView.swift in Sources */,

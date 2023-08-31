@@ -8,22 +8,23 @@
 import Foundation
 
 class FlashCard: ObservableObject {
-    
     @Published private(set) var model: CardContent
     
     init() {
         model = CardContent()
+        addWord(word: "dog", traduction: "chien")
+        addWord(word: "cat", traduction: "Chat")
+        addWord(word: "beer", traduction: "biere")
+        addWord(word: "wine", traduction: "vin")
     }
     
-    func getCards(for level: CardContent.level) -> [CardContent.Card] {
+    func getCards(for level: Constant.level) -> [CardContent.Card] {
         var cards: [CardContent.Card] = []
-        print(level)
         for card in model.cards {
             if card.currentLevel == level {
                 cards.append(card)
             }
         }
-        print(cards)
         return cards
     }
     
