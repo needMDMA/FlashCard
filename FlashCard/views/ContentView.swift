@@ -62,13 +62,13 @@ struct ContentView: View {
     @ViewBuilder
     func deck(_ level: Constant.level) -> some View {
         ZStack {
-            VStack(spacing: -173) {
-                deckBaseView(level: level).padding()
+            ZStack{
+                deckBaseView(level: level)
                 let cards = flashCard.model.deck[level] ?? []
-                ForEach(cards) { card in
+                ForEach(0..<cards.count) { index in
+                    let card = cards[index]
                     FlashCardView(card: card)
-                        .padding()
-                }
+                }.offset(y: 0)
             }
             badge(level: level)
         }

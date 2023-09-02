@@ -8,6 +8,7 @@
 import Foundation
 
 struct CardContent<levels> where levels: Hashable{
+    private let maxScore = 2
     private(set) var deck: [levels: [Card]] = [:]
     
     mutating func addWord(level: levels, word: String, traduction: String) {
@@ -21,55 +22,53 @@ struct CardContent<levels> where levels: Hashable{
     
     mutating func promoteWord(card: Card, promotingTo: levels?) {
         var card = card
-        if card.score > 0 {
-            card.score = 0
-        } else {
-            card.score += 1
-        }
+        card.score += 1
         
-        var cards = deck[card.currentLevel]!
-        var _ = cards.popLast()!
-        if card.score > 0 {
-            cards.insert(card, at: 0)
-            deck.updateValue(cards, forKey: card.currentLevel)
+        removeLast(of: card.currentLevel)
+        
+        if card.score < maxScore {
+            goBottom(of: card.currentLevel, for: card)
         } else {
             if let promotingTo = promotingTo {
-                deck.updateValue(cards, forKey: card.currentLevel)
                 card.currentLevel = promotingTo
-                if var cards = deck[promotingTo] {
-                    cards.insert(card, at: 0)
-                    deck.updateValue(cards, forKey: promotingTo)
-                } else {
-                    deck[promotingTo] = [card]
-                }
+                card.score = 0
+                goBottom(of: promotingTo, for: card)
             } else {
-                // go bottom of the pile
+                goBottom(of: card.currentLevel, for: card)
             }
         }
     }
     
     mutating func downgradeWord(card: Card, downgradeTo: levels?) {
         var card = card
-        if card.score >= 0 {
+        removeLast(of: card.currentLevel)
+
+        if card.score > 0 {
             card.score -= 1
-        }
-        
-        var cards = deck[card.currentLevel]!
-        var _ = cards.popLast()!
-        if card.score >= 0 {
-            cards.insert(card, at: 0)
-            deck.updateValue(cards, forKey: card.currentLevel)
+            goBottom(of: card.currentLevel, for: card)
         } else {
             if let downgradeTo = downgradeTo {
-                deck.updateValue(cards, forKey: card.currentLevel)
                 card.currentLevel = downgradeTo
-                if var cards = deck[downgradeTo] {
-                    cards.insert(card, at: 0)
-                    deck.updateValue(cards, forKey: downgradeTo)
-                } else {
-                    deck[downgradeTo] = [card]
-                }
+                goBottom(of: downgradeTo, for: card)
+            } else {
+                goBottom(of: card.currentLevel, for: card)
             }
+        }
+    }
+    
+    mutating func removeLast(of level: levels) {
+        if var cards = deck[level] {
+            cards.removeLast()
+            deck.updateValue(cards, forKey: level)
+        }
+    }
+        
+    mutating func goBottom(of level: levels, for card: Card) {
+        if var cards = deck[level] {
+            cards.insert(card, at: 0)
+            deck.updateValue(cards, forKey: level)
+        } else {
+            deck[level] = [card]
         }
     }
     
