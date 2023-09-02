@@ -7,52 +7,77 @@
 
 import Foundation
 
-struct CardContent {    
-    private(set) var cards: [Card] = []
+struct CardContent<levels> where levels: Hashable{
+    private(set) var deck: [levels: [Card]] = [:]
     
-    mutating func addWord(word: String, traduction: String) {
-        cards.append(Card(currentLevel: Constant.level.beginner, word: word, traduction: traduction, id: cards.count))
+    mutating func addWord(level: levels, word: String, traduction: String) {
+        if var levelCards = deck[level] {
+            levelCards.append(Card(currentLevel: level, word: word, traduction: traduction))
+            deck.updateValue(levelCards, forKey: level)
+        } else {
+            deck[level] = [Card(currentLevel: level, word: word, traduction: traduction)]
+        }
     }
     
-    mutating func promoteWord(card: Card) {
-        let id = card.id
-        switch cards[id].currentLevel {
-        case .expert:
-            return
-        default:
-            if cards[id].score < 2 {
-                cards[id].score += 1
-            }
-            if cards[id].score == 2 {
-                cards[id].score = 0
-                if let promotedLevel = Constant.level(rawValue: (card.currentLevel.rawValue + 1)) {
-                    cards[id].currentLevel = promotedLevel
+    mutating func promoteWord(card: Card, promotingTo: levels?) {
+        var card = card
+        if card.score > 0 {
+            card.score = 0
+        } else {
+            card.score += 1
+        }
+        
+        var cards = deck[card.currentLevel]!
+        var _ = cards.popLast()!
+        if card.score > 0 {
+            cards.insert(card, at: 0)
+            deck.updateValue(cards, forKey: card.currentLevel)
+        } else {
+            if let promotingTo = promotingTo {
+                deck.updateValue(cards, forKey: card.currentLevel)
+                card.currentLevel = promotingTo
+                if var cards = deck[promotingTo] {
+                    cards.insert(card, at: 0)
+                    deck.updateValue(cards, forKey: promotingTo)
+                } else {
+                    deck[promotingTo] = [card]
                 }
+            } else {
+                // go bottom of the pile
             }
         }
     }
-    mutating func downgradeWord(card: Card) {
-        let id = card.id
-        switch cards[id].currentLevel {
-        case .beginner:
-            return
-        default:
-            if cards[id].score > 0 {
-                cards[id].score -= 1
-            }
-            if cards[id].score == 0 {
-                if let downgradeLevel = Constant.level(rawValue: (card.currentLevel.rawValue - 1)) {
-                    cards[card.id].currentLevel = downgradeLevel
+    
+    mutating func downgradeWord(card: Card, downgradeTo: levels?) {
+        var card = card
+        if card.score >= 0 {
+            card.score -= 1
+        }
+        
+        var cards = deck[card.currentLevel]!
+        var _ = cards.popLast()!
+        if card.score >= 0 {
+            cards.insert(card, at: 0)
+            deck.updateValue(cards, forKey: card.currentLevel)
+        } else {
+            if let downgradeTo = downgradeTo {
+                deck.updateValue(cards, forKey: card.currentLevel)
+                card.currentLevel = downgradeTo
+                if var cards = deck[downgradeTo] {
+                    cards.insert(card, at: 0)
+                    deck.updateValue(cards, forKey: downgradeTo)
+                } else {
+                    deck[downgradeTo] = [card]
                 }
             }
         }
     }
     
     struct Card: Identifiable {
-        var currentLevel: Constant.level
+        var currentLevel: levels
         var score: Int = 0
         let word: String
         let traduction: String
-        let id: Int
+        let id = UUID()
     }
 }

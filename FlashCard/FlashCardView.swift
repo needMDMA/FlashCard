@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FlashCardView: View {
-    let card: CardContent.Card
+    let card: CardContent<Constant.level>.Card
     @EnvironmentObject var flashCard: FlashCard
     @State var showTraduction = false
     
@@ -50,7 +50,6 @@ struct FlashCardView: View {
             } else {
                 Text(card.word)
             }
-            Text("\(card.score)")
         }
             .font(.largeTitle)
             .autocorrectionDisabled()

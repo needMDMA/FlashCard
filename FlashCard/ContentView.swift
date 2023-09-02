@@ -18,6 +18,8 @@ struct ContentView: View {
     @State var newWord = ""
     @State var newWordTraduction = ""
     @State private var showingPopover = false
+    var offset = 0.0
+    
     
     var body: some View {
         VStack{
@@ -30,11 +32,11 @@ struct ContentView: View {
             }
             
             ScrollView {
-                VStack(spacing: -20) {
-                    deck(level: Constant.level.beginner)
-                    deck(level: Constant.level.intermediate)
-                    deck(level: Constant.level.advanced)
-                    deck(level: Constant.level.expert)
+                VStack() {
+                    deck(Constant.level.beginner)
+                    deck(Constant.level.intermediate)
+                    deck(Constant.level.advanced)
+                    deck(Constant.level.expert)
                 }
             }
         }
@@ -56,23 +58,20 @@ struct ContentView: View {
             }
         }
     }
-    
+    	
     @ViewBuilder
-    func deck(level: Constant.level) -> some View {
+    func deck(_ level: Constant.level) -> some View {
         ZStack {
-            ZStack {
+            VStack(spacing: -173) {
                 deckBaseView(level: level).padding()
-                let cards = flashCard.getCards(for: level)
+                let cards = flashCard.model.deck[level] ?? []
                 ForEach(cards) { card in
-                    if card.currentLevel == level {
-                        FlashCardView(card: card)
-                            .offset(y: Double(card.id) * -3)
-                            .padding()
-                        }
-                    }
+                    FlashCardView(card: card)
+                        .padding()
                 }
+            }
             badge(level: level)
-        }.padding(.vertical)
+        }
     }
     
     @ViewBuilder
@@ -87,7 +86,7 @@ struct ContentView: View {
     
     func numberOfCard(in level: Constant.level) -> String {
         var numberOfCard = 0
-        for card in flashCard.model.cards {
+        for card in flashCard.model.deck[level] ?? [] {
             if card.currentLevel == level {
                 numberOfCard += 1
             }
