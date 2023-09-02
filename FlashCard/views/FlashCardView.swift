@@ -87,9 +87,9 @@ struct FlashCardView: View {
     }
 }
 
-//struct FlashCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FlashCardView(card: CardContent.Card(word: "Dog", traduction: "Chien", id: 0))
-//            .environmentObject(FlashCard())
-//    }
-//}
+struct FlashCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        FlashCardView(card: CardContent<Constant.level>.Card(currentLevel: .beginner, word: "Dog", traduction: "Chien"))
+            .environmentObject(FlashCard())
+    }
+}

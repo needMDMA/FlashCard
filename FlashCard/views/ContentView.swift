@@ -65,10 +65,9 @@ struct ContentView: View {
             ZStack{
                 deckBaseView(level: level)
                 let cards = flashCard.model.deck[level] ?? []
-                ForEach(0..<cards.count) { index in
-                    let card = cards[index]
+                ForEach(cards) { card in
                     FlashCardView(card: card)
-                }.offset(y: 0)
+                }
             }
             badge(level: level)
         }
