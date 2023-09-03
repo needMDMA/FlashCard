@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct FlashCardView: View {
+    let roundness: CGFloat = 40
     let card: CardContent<Constant.level>.Card
     @EnvironmentObject var flashCard: FlashCard
     @State var showTraduction = false
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 40.0).foregroundColor(cardColor(level: card.currentLevel))
-            RoundedRectangle(cornerRadius: 40.0).stroke(lineWidth: 1)
+            RoundedRectangle(cornerRadius: roundness).foregroundColor(cardColor(level: card.currentLevel))
+            RoundedRectangle(cornerRadius: roundness).stroke(lineWidth: 2)
             HStack {
                 Spacer()
                 wrongButton
@@ -31,7 +32,7 @@ struct FlashCardView: View {
                 .foregroundColor(.green)
                 .opacity(isPromotable)
         }
-        .aspectRatio(5/2, contentMode: .fill)
+        .aspectRatio(5/2, contentMode: .fit)
     }
     
     var isPromotable: Double {
