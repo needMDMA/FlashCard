@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FlashCardView: View {
-    let card: CardContent<Constant.level>.Card
+    let card: DeckContent<Constant.level>.Card
     @EnvironmentObject var flashCard: FlashCard
     @State var showTraduction = false
     
@@ -89,7 +89,7 @@ struct FlashCardView: View {
 
 //struct FlashCardView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        FlashCardView(card: CardContent.Card(word: "Dog", traduction: "Chien", id: 0))
+//        FlashCardView(card: DeckContent.Card(word: "Dog", traduction: "Chien", id: 0))
 //            .environmentObject(FlashCard())
 //    }
 //}

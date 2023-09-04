@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct CardContent<levels> where levels: Hashable{
-    private let maxScore = 2
+struct DeckContent<levels>: Codable where levels: Hashable {
+    private var maxScore = 2
     private(set) var deck: [levels: [Card]] = [:]
     
     mutating func addWord(level: levels, word: String, traduction: String) {
@@ -56,14 +56,14 @@ struct CardContent<levels> where levels: Hashable{
         }
     }
     
-    mutating func removeLast(of level: levels) {
+    private mutating func removeLast(of level: levels) {
         if var cards = deck[level] {
             cards.removeLast()
             deck.updateValue(cards, forKey: level)
         }
     }
         
-    mutating func goBottom(of level: levels, for card: Card) {
+    private mutating func goBottom(of level: levels, for card: Card) {
         if var cards = deck[level] {
             cards.insert(card, at: 0)
             deck.updateValue(cards, forKey: level)
@@ -71,6 +71,11 @@ struct CardContent<levels> where levels: Hashable{
             deck[level] = [card]
         }
     }
+    
+    func json() throws -> Data {
+        try JSONEncoder().encode(self)
+    }
+    
     
     struct Card: Identifiable {
         var currentLevel: levels
