@@ -19,11 +19,7 @@ class FlashCard: ObservableObject {
             model = autosavedData
         } else {
             model = DeckContent<Constant.level>()
-            for word in ["Dog", "Cat"] {
-                addWord(word: word, traduction: word)
-            }
         }
-        
     }
     
     private struct Autosave {

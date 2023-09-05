@@ -15,15 +15,6 @@ struct DeckContent<levels: Codable>: Codable where levels: Hashable {
     mutating func addWord(level: levels, word: String, traduction: String) {
         let newCard = Card(currentLevel: level, word: word, traduction: traduction)
         goBottom(of: level, for: newCard)
-        
-        
-//        if var cards = deck[level] {
-//            let newCard = Card(currentLevel: level, word: word, traduction: traduction)
-//            cards.insert(newCard, at: 0)
-//            deck.updateValue(cards, forKey: level)
-//        } else {
-//            deck[level] = [Card(currentLevel: level, word: word, traduction: traduction)]
-//        }
     }
     
     mutating func promoteWord(card: Card, promotingTo: levels?) {
