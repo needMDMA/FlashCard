@@ -7,17 +7,23 @@
 
 import Foundation
 
-struct DeckContent<levels>: Codable where levels: Hashable {
+struct DeckContent<levels: Codable>: Codable where levels: Hashable {
     private var maxScore = 2
     private(set) var deck: [levels: [Card]] = [:]
+    var url = URL(string: " ")
     
     mutating func addWord(level: levels, word: String, traduction: String) {
-        if var levelCards = deck[level] {
-            levelCards.append(Card(currentLevel: level, word: word, traduction: traduction))
-            deck.updateValue(levelCards, forKey: level)
-        } else {
-            deck[level] = [Card(currentLevel: level, word: word, traduction: traduction)]
-        }
+        let newCard = Card(currentLevel: level, word: word, traduction: traduction)
+        goBottom(of: level, for: newCard)
+        
+        
+//        if var cards = deck[level] {
+//            let newCard = Card(currentLevel: level, word: word, traduction: traduction)
+//            cards.insert(newCard, at: 0)
+//            deck.updateValue(cards, forKey: level)
+//        } else {
+//            deck[level] = [Card(currentLevel: level, word: word, traduction: traduction)]
+//        }
     }
     
     mutating func promoteWord(card: Card, promotingTo: levels?) {
@@ -71,17 +77,29 @@ struct DeckContent<levels>: Codable where levels: Hashable {
             deck[level] = [card]
         }
     }
-    
+
     func json() throws -> Data {
         try JSONEncoder().encode(self)
     }
+
+    init(url: URL) throws {
+        let data = try Data(contentsOf: url)
+        self = try DeckContent(json: data)
+    }
     
+    init(json: Data) throws {
+        self = try JSONDecoder().decode(DeckContent.self, from: json)
+    }
     
-    struct Card: Identifiable {
+    init() {}
+    
+
+    
+    struct Card: Identifiable, Codable {
         var currentLevel: levels
         var score: Int = 0
         let word: String
         let traduction: String
-        let id = UUID()
+        var id = UUID()
     }
 }

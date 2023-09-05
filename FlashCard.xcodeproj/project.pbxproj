@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B13008A2AA4B8DF0062874B /* DeckStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1300892AA4B8DF0062874B /* DeckStorage.swift */; };
 		8B37AD962A94153800BEE965 /* FlashCardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B37AD952A94153800BEE965 /* FlashCardApp.swift */; };
 		8B37AD982A94153800BEE965 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B37AD972A94153800BEE965 /* ContentView.swift */; };
 		8B37AD9A2A94153900BEE965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B37AD992A94153900BEE965 /* Assets.xcassets */; };
@@ -40,7 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8B1300892AA4B8DF0062874B /* DeckStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckStorage.swift; sourceTree = "<group>"; };
 		8B37AD922A94153800BEE965 /* FlashCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B37AD952A94153800BEE965 /* FlashCardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardApp.swift; sourceTree = "<group>"; };
 		8B37AD972A94153800BEE965 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 				8BA5CBD52AA01EBD000502C0 /* Constant.swift */,
 				8B37AD952A94153800BEE965 /* FlashCardApp.swift */,
 				8BC787EB2A958A800021C6E6 /* DeckContent.swift */,
-				8B1300892AA4B8DF0062874B /* DeckStorage.swift */,
 				8BC787ED2A958B610021C6E6 /* FlashCard.swift */,
 				8B37AD992A94153900BEE965 /* Assets.xcassets */,
 				8B37AD9B2A94153900BEE965 /* Preview Content */,
@@ -283,7 +280,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B13008A2AA4B8DF0062874B /* DeckStorage.swift in Sources */,
 				8BA5CBD62AA01EBD000502C0 /* Constant.swift in Sources */,
 				8BC787EE2A958B610021C6E6 /* FlashCard.swift in Sources */,
 				8BC787EC2A958A800021C6E6 /* DeckContent.swift in Sources */,
