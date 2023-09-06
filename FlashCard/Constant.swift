@@ -8,7 +8,7 @@
 import Foundation
 
 struct Constant {
-    enum level: Int, Hashable {
+    enum level: Int, Hashable, Codable {
         case beginner = 0, intermediate ,advanced ,expert
     }
 }

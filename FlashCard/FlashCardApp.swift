@@ -11,7 +11,7 @@ import SwiftUI
 struct FlashCardApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(FlashCard())
+            FlashCardView().environmentObject(FlashCard())
         }
     }
 }

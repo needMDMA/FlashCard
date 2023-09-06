@@ -1,95 +1,99 @@
 //
-//  FlashCardView.swift
+//  ContentView.swift
 //  FlashCard
 //
-//  Created by Olivier Lambert Rouillard on 2023-08-28.
+//  Created by Olivier Lambert Rouillard on 2023-08-21.
 //
 
 import SwiftUI
 
+struct word: Identifiable {
+    let word: String
+    let traduction: String
+    let id = UUID()
+}
+
 struct FlashCardView: View {
-    let card: CardContent<Constant.level>.Card
     @EnvironmentObject var flashCard: FlashCard
-    @State var showTraduction = false
+    @State var newWord = ""
+    @State var newWordTraduction = ""
+    @State private var showingPopover = false
+    var offset = 0.0
+    
     
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 40.0).foregroundColor(cardColor(level: card.currentLevel))
-            RoundedRectangle(cornerRadius: 40.0).stroke(lineWidth: 1)
-            HStack {
-                Spacer()
-                wrongButton
-                Spacer()
-                traductionButton
-                Spacer()
-                correctButton
-                Spacer()
-            }.bold()
-            Circle()
-                .scale(0.05)
-                .offset(x: 140, y: -50)
-                .foregroundColor(.green)
-                .opacity(isPromotable)
-        }
-        .aspectRatio(5/2, contentMode: .fill)
+        VStack{
+            Button {
+                showingPopover = true
+            }label: {
+                Image(systemName: "plus")
+            }.popover(isPresented: $showingPopover) {
+                addWord
+            }
+            
+            ScrollView{
+                Text("")
+                deck(Constant.level.beginner)
+                deck(Constant.level.intermediate)
+                deck(Constant.level.advanced)
+                deck(Constant.level.expert)
+            }
+        }.padding()
     }
-    
-    var isPromotable: Double {
-        if card.score > 0 {
-            return 1
-        }
-        return 0
-    }
-    
-    var traductionButton: some View {
-        Button {
-            showTraduction.toggle()
-        } label: {
-            if showTraduction {
-                Text(card.traduction)
-            } else {
-                Text(card.word)
+        
+    var addWord: some View {
+        VStack {
+            Form {
+                Section(header: Text("new word")){
+                    TextField("Word", text: $newWord)
+                    TextField("Traduction", text: $newWordTraduction)
+                }
+            }
+            Button("Add") {
+                flashCard.addWord(word: newWord, traduction: newWordTraduction)
+                showingPopover = false
+                newWord = ""
+                newWordTraduction = ""
             }
         }
-            .font(.largeTitle)
-            .autocorrectionDisabled()
-            .foregroundColor(.black)
     }
-    
-    var correctButton: some View {
-        Button {
-            flashCard.promoteWord(card: card)
-        }label: {
-            Image(systemName: "checkmark")
-        }.foregroundColor(.white)
-    }
-    
-    var wrongButton: some View {
-        Button {
-            flashCard.downgradeWord(card: card)
-        } label: {
-            Image(systemName: "xmark")
-        }.foregroundColor(.white)
-    }
-    
-    
-    func cardColor(level: Constant.level) -> Color {
-        switch level {
-        case .beginner:
-            return .red
-        case .intermediate:
-            return .yellow
-        case .advanced:
-            return .orange
-        case .expert:
-            return .green
+    	
+    @ViewBuilder
+    func deck(_ level: Constant.level) -> some View {
+        ZStack {
+            ZStack{
+                DeckBaseView(level: level)
+                if let cards = flashCard.model.deck[level], cards.count > 0 {
+                    CardView(card: cards[cards.count-1])
+                }
+            }
+            badge(level: level)
         }
+    }
+    
+    @ViewBuilder
+    func badge(level: Constant.level) -> some View {
+        let numberOfcard = numberOfCard(in: level)
+        ZStack {
+            Circle().scale(0.25)
+            Circle().scale(0.24).foregroundColor(.white)
+            Text(numberOfcard).bold()
+        }.offset(x: -130, y: -80)
+    }
+    
+    func numberOfCard(in level: Constant.level) -> String {
+        var numberOfCard = 0
+        for card in flashCard.model.deck[level] ?? [] {
+            if card.currentLevel == level {
+                numberOfCard += 1
+            }
+        }
+        return "\(numberOfCard)"
     }
 }
 
-//struct FlashCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FlashCardView(card: CardContent.Card(word: "Dog", traduction: "Chien", id: 0))
-//            .environmentObject(FlashCard())
-//    }
-//}
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        FlashCardView().environmentObject(FlashCard())
+    }
+}
