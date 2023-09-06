@@ -40,7 +40,6 @@ class FlashCard: ObservableObject {
         do {
             let data = try model.json()
             try data.write(to: url)
-            print(data)
         } catch {
             print("Failed to save")
         }
