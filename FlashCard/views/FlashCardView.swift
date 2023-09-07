@@ -15,47 +15,18 @@ struct word: Identifiable {
 
 struct FlashCardView: View {
     @EnvironmentObject var flashCard: FlashCard
-    @State var newWord = ""
-    @State var newWordTraduction = ""
-    @State private var showingPopover = false
-    var offset = 0.0
-    
-    
+
     var body: some View {
         VStack{
-            Button {
-                showingPopover = true
-            }label: {
-                Image(systemName: "plus")
-            }.popover(isPresented: $showingPopover) {
-                addWord
-            }
-            
+            AddWordView()
             ScrollView{
-                Text("")
                 deck(Constant.level.beginner)
                 deck(Constant.level.intermediate)
                 deck(Constant.level.advanced)
                 deck(Constant.level.expert)
             }
         }.padding()
-    }
-        
-    var addWord: some View {
-        VStack {
-            Form {
-                Section(header: Text("new word")){
-                    TextField("Word", text: $newWord)
-                    TextField("Traduction", text: $newWordTraduction)
-                }
-            }
-            Button("Add") {
-                flashCard.addWord(word: newWord, traduction: newWordTraduction)
-                showingPopover = false
-                newWord = ""
-                newWordTraduction = ""
-            }
-        }
+            .frame(minWidth: 700, minHeight: 1250)
     }
     	
     @ViewBuilder
@@ -68,7 +39,7 @@ struct FlashCardView: View {
                 }
             }
             badge(level: level)
-        }
+        }.padding()
     }
     
     @ViewBuilder
@@ -78,7 +49,7 @@ struct FlashCardView: View {
             Circle().scale(0.25)
             Circle().scale(0.24).foregroundColor(.white)
             Text(numberOfcard).bold()
-        }.offset(x: -130, y: -80)
+        }.offset(x: -265, y: -80)
     }
     
     func numberOfCard(in level: Constant.level) -> String {

@@ -27,7 +27,7 @@ struct CardView: View {
             }.bold()
             Circle()
                 .scale(0.05)
-                .offset(x: 140, y: -50)
+                .offset(x: 285, y: -90)
                 .foregroundColor(.green)
                 .opacity(isPromotable)
         }
@@ -51,9 +51,8 @@ struct CardView: View {
                 Text(card.word)
             }
         }
-            .font(.largeTitle)
-            .autocorrectionDisabled()
-            .foregroundColor(.black)
+        .buttonStyle(.plain)
+        .font(.largeTitle)
     }
     
     var correctButton: some View {
@@ -61,7 +60,9 @@ struct CardView: View {
             flashCard.promoteWord(card: card)
         }label: {
             Image(systemName: "checkmark")
-        }.foregroundColor(.white)
+        }
+        .buttonStyle(.plain)
+        .font(.largeTitle)
     }
     
     var wrongButton: some View {
@@ -69,7 +70,8 @@ struct CardView: View {
             flashCard.downgradeWord(card: card)
         } label: {
             Image(systemName: "xmark")
-        }.foregroundColor(.white)
+        }.buttonStyle(.plain)
+            .font(.largeTitle)
     }
     
     
