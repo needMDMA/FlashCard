@@ -14,7 +14,8 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 40.0).foregroundColor(cardColor(level: card.currentLevel))
+            RoundedRectangle(cornerRadius: 40.0)
+                .foregroundColor(Constant.levelColor(level: card.currentLevel))
             RoundedRectangle(cornerRadius: 40.0).stroke(lineWidth: 1)
             HStack {
                 Spacer()
@@ -72,20 +73,6 @@ struct CardView: View {
             Image(systemName: "xmark")
         }.buttonStyle(.plain)
             .font(.largeTitle)
-    }
-    
-    
-    func cardColor(level: Constant.level) -> Color {
-        switch level {
-        case .beginner:
-            return .red
-        case .intermediate:
-            return .yellow
-        case .advanced:
-            return .orange
-        case .expert:
-            return .green
-        }
     }
 }
 

@@ -19,12 +19,11 @@ struct FlashCardView: View {
     var body: some View {
         VStack{
             AddWordView()
-            ScrollView{
-                deck(Constant.level.beginner)
-                deck(Constant.level.intermediate)
-                deck(Constant.level.advanced)
-                deck(Constant.level.expert)
-            }
+            deck(Constant.level.beginner)
+            deck(Constant.level.intermediate)
+            deck(Constant.level.advanced)
+            deck(Constant.level.expert)
+            removeWordView()
         }.padding()
             .frame(minWidth: 700, minHeight: 1250)
     }
@@ -48,7 +47,7 @@ struct FlashCardView: View {
         ZStack {
             Circle().scale(0.25)
             Circle().scale(0.24).foregroundColor(.white)
-            Text(numberOfcard).bold()
+            Text(numberOfcard).font(.title.bold())
         }.offset(x: -265, y: -80)
     }
     

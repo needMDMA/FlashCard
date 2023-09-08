@@ -56,4 +56,8 @@ class FlashCard: ObservableObject {
     func downgradeWord(card: DeckContent<Constant.level>.Card) {
         model.downgradeWord(card: card, downgradeTo: Constant.level(rawValue: card.currentLevel.rawValue - 1))
     }
+    
+    func removeWord(id: UUID) {
+        model.removeWord(id: id)
+    }
 }

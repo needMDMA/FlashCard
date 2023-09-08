@@ -53,6 +53,20 @@ struct DeckContent<levels: Codable>: Codable where levels: Hashable {
         }
     }
     
+    mutating func removeWord(id: UUID) {
+        for level in deck.keys {
+            if var cards = deck[level] {
+                for index in 0..<cards.count {
+                    if cards[index].id == id {
+                        cards.remove(at: index)
+                        deck.updateValue(cards, forKey: level)
+                        break
+                    }
+                }
+            }
+        }
+    }
+    
     private mutating func removeLast(of level: levels) {
         if var cards = deck[level] {
             cards.removeLast()
