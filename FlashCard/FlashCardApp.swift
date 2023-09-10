@@ -12,6 +12,7 @@ struct FlashCardApp: App {
     var body: some Scene {
         WindowGroup {
             FlashCardView().environmentObject(FlashCard())
-        }
+                .frame(width: Constant.width, height: Constant.height)
+        }.windowResizability(.contentSize)
     }
 }

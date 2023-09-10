@@ -1,5 +1,5 @@
 //
-//  removeWordView.swift
+//  RemoveWordView.swift
 //  FlashCard
 //
 //  Created by Olivier Lambert Rouillard on 2023-09-07.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct removeWordView: View {
+struct RemoveWordView: View {
     @EnvironmentObject var flashCard: FlashCard
     @State var showingPopover = false
     
@@ -49,8 +49,8 @@ struct removeWordView: View {
     }
 }
 
-struct removeWordView_Previews: PreviewProvider {
+struct RemoveWordView_Previews: PreviewProvider {
     static var previews: some View {
-        removeWordView().environmentObject(FlashCard())
+        RemoveWordView().environmentObject(FlashCard())
     }
 }

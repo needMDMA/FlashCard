@@ -12,30 +12,14 @@
 		8B37AD9A2A94153900BEE965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B37AD992A94153900BEE965 /* Assets.xcassets */; };
 		8B37AD9D2A94153900BEE965 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B37AD9C2A94153900BEE965 /* Preview Assets.xcassets */; };
 		8B4D5A2F2AA9FD7400DBF299 /* AddWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D5A2E2AA9FD7400DBF299 /* AddWordView.swift */; };
-		8B4D5A322AAA914700DBF299 /* removeWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D5A312AAA914700DBF299 /* removeWordView.swift */; };
+		8B4D5A322AAA914700DBF299 /* RemoveWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D5A312AAA914700DBF299 /* RemoveWordView.swift */; };
 		8BA5CBD62AA01EBD000502C0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5CBD52AA01EBD000502C0 /* Constant.swift */; };
+		8BAC723C2AAE466F005BA8A8 /* DeckListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC723B2AAE466F005BA8A8 /* DeckListView.swift */; };
 		8BC787EC2A958A800021C6E6 /* DeckContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC787EB2A958A800021C6E6 /* DeckContent.swift */; };
 		8BC787EE2A958B610021C6E6 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC787ED2A958B610021C6E6 /* FlashCard.swift */; };
 		8BD297DA2A9D48DD00166209 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD297D92A9D48DD00166209 /* CardView.swift */; };
-		8BD297DC2A9D6B9700166209 /* DeckBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD297DB2A9D6B9700166209 /* DeckBaseView.swift */; };
+		8BEEBC8B2AAE600F0081ED26 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEEBC8A2AAE600F0081ED26 /* ThemeView.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		8B37ADA32A94153900BEE965 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8B37AD8A2A94153800BEE965 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8B37AD912A94153800BEE965;
-			remoteInfo = FlashCard;
-		};
-		8B37ADAD2A94153900BEE965 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8B37AD8A2A94153800BEE965 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8B37AD912A94153800BEE965;
-			remoteInfo = FlashCard;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8B37AD922A94153800BEE965 /* FlashCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,41 +27,18 @@
 		8B37AD972A94153800BEE965 /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
 		8B37AD992A94153900BEE965 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B37AD9C2A94153900BEE965 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8B37ADA22A94153900BEE965 /* FlashCardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashCardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B37ADAC2A94153900BEE965 /* FlashCardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashCardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B4D5A2E2AA9FD7400DBF299 /* AddWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordView.swift; sourceTree = "<group>"; };
-		8B4D5A312AAA914700DBF299 /* removeWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = removeWordView.swift; sourceTree = "<group>"; };
+		8B4D5A312AAA914700DBF299 /* RemoveWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveWordView.swift; sourceTree = "<group>"; };
 		8BA5CBD52AA01EBD000502C0 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		8BAC723B2AAE466F005BA8A8 /* DeckListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListView.swift; sourceTree = "<group>"; };
 		8BC787EB2A958A800021C6E6 /* DeckContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckContent.swift; sourceTree = "<group>"; };
 		8BC787ED2A958B610021C6E6 /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
 		8BD297D92A9D48DD00166209 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		8BD297DB2A9D6B9700166209 /* DeckBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckBaseView.swift; sourceTree = "<group>"; };
-		8BECF4EE2AA7F2F9006F31DA /* MacFlashCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacFlashCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BEEBC8A2AAE600F0081ED26 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8B37AD8F2A94153800BEE965 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B37AD9F2A94153900BEE965 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B37ADA92A94153900BEE965 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8BECF4EB2AA7F2F9006F31DA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -99,9 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				8B37AD922A94153800BEE965 /* FlashCard.app */,
-				8B37ADA22A94153900BEE965 /* FlashCardTests.xctest */,
-				8B37ADAC2A94153900BEE965 /* FlashCardUITests.xctest */,
-				8BECF4EE2AA7F2F9006F31DA /* MacFlashCard.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,7 +67,7 @@
 		8B37AD942A94153800BEE965 /* FlashCard */ = {
 			isa = PBXGroup;
 			children = (
-				8BA5CBD72AA3F33B000502C0 /* views */,
+				8BEEBC8D2AAE666A0081ED26 /* views */,
 				8BA5CBD52AA01EBD000502C0 /* Constant.swift */,
 				8B37AD952A94153800BEE965 /* FlashCardApp.swift */,
 				8BC787EB2A958A800021C6E6 /* DeckContent.swift */,
@@ -128,14 +86,31 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		8BA5CBD72AA3F33B000502C0 /* views */ = {
+		8BA5CBD72AA3F33B000502C0 /* cards */ = {
 			isa = PBXGroup;
 			children = (
+				8BAC723B2AAE466F005BA8A8 /* DeckListView.swift */,
 				8B37AD972A94153800BEE965 /* FlashCardView.swift */,
 				8BD297D92A9D48DD00166209 /* CardView.swift */,
-				8BD297DB2A9D6B9700166209 /* DeckBaseView.swift */,
+			);
+			path = cards;
+			sourceTree = "<group>";
+		};
+		8BEEBC8C2AAE664F0081ED26 /* buttons */ = {
+			isa = PBXGroup;
+			children = (
 				8B4D5A2E2AA9FD7400DBF299 /* AddWordView.swift */,
-				8B4D5A312AAA914700DBF299 /* removeWordView.swift */,
+				8B4D5A312AAA914700DBF299 /* RemoveWordView.swift */,
+			);
+			path = buttons;
+			sourceTree = "<group>";
+		};
+		8BEEBC8D2AAE666A0081ED26 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				8BEEBC8C2AAE664F0081ED26 /* buttons */,
+				8BEEBC8A2AAE600F0081ED26 /* ThemeView.swift */,
+				8BA5CBD72AA3F33B000502C0 /* cards */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -160,59 +135,6 @@
 			productReference = 8B37AD922A94153800BEE965 /* FlashCard.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8B37ADA12A94153900BEE965 /* FlashCardTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8B37ADB92A94153900BEE965 /* Build configuration list for PBXNativeTarget "FlashCardTests" */;
-			buildPhases = (
-				8B37AD9E2A94153900BEE965 /* Sources */,
-				8B37AD9F2A94153900BEE965 /* Frameworks */,
-				8B37ADA02A94153900BEE965 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8B37ADA42A94153900BEE965 /* PBXTargetDependency */,
-			);
-			name = FlashCardTests;
-			productName = FlashCardTests;
-			productReference = 8B37ADA22A94153900BEE965 /* FlashCardTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		8B37ADAB2A94153900BEE965 /* FlashCardUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8B37ADBC2A94153900BEE965 /* Build configuration list for PBXNativeTarget "FlashCardUITests" */;
-			buildPhases = (
-				8B37ADA82A94153900BEE965 /* Sources */,
-				8B37ADA92A94153900BEE965 /* Frameworks */,
-				8B37ADAA2A94153900BEE965 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8B37ADAE2A94153900BEE965 /* PBXTargetDependency */,
-			);
-			name = FlashCardUITests;
-			productName = FlashCardUITests;
-			productReference = 8B37ADAC2A94153900BEE965 /* FlashCardUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		8BECF4ED2AA7F2F9006F31DA /* MacFlashCard */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8BECF4FA2AA7F2FB006F31DA /* Build configuration list for PBXNativeTarget "MacFlashCard" */;
-			buildPhases = (
-				8BECF4EA2AA7F2F9006F31DA /* Sources */,
-				8BECF4EB2AA7F2F9006F31DA /* Frameworks */,
-				8BECF4EC2AA7F2F9006F31DA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MacFlashCard;
-			productName = MacFlashCard;
-			productReference = 8BECF4EE2AA7F2F9006F31DA /* MacFlashCard.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -224,17 +146,6 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					8B37AD912A94153800BEE965 = {
-						CreatedOnToolsVersion = 14.3.1;
-					};
-					8B37ADA12A94153900BEE965 = {
-						CreatedOnToolsVersion = 14.3.1;
-						TestTargetID = 8B37AD912A94153800BEE965;
-					};
-					8B37ADAB2A94153900BEE965 = {
-						CreatedOnToolsVersion = 14.3.1;
-						TestTargetID = 8B37AD912A94153800BEE965;
-					};
-					8BECF4ED2AA7F2F9006F31DA = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
@@ -253,9 +164,6 @@
 			projectRoot = "";
 			targets = (
 				8B37AD912A94153800BEE965 /* FlashCard */,
-				8B37ADA12A94153900BEE965 /* FlashCardTests */,
-				8B37ADAB2A94153900BEE965 /* FlashCardUITests */,
-				8BECF4ED2AA7F2F9006F31DA /* MacFlashCard */,
 			);
 		};
 /* End PBXProject section */
@@ -270,27 +178,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8B37ADA02A94153900BEE965 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B37ADAA2A94153900BEE965 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8BECF4EC2AA7F2F9006F31DA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -301,50 +188,17 @@
 				8BA5CBD62AA01EBD000502C0 /* Constant.swift in Sources */,
 				8BC787EE2A958B610021C6E6 /* FlashCard.swift in Sources */,
 				8BC787EC2A958A800021C6E6 /* DeckContent.swift in Sources */,
+				8BAC723C2AAE466F005BA8A8 /* DeckListView.swift in Sources */,
 				8B37AD982A94153800BEE965 /* FlashCardView.swift in Sources */,
 				8B4D5A2F2AA9FD7400DBF299 /* AddWordView.swift in Sources */,
 				8BD297DA2A9D48DD00166209 /* CardView.swift in Sources */,
-				8B4D5A322AAA914700DBF299 /* removeWordView.swift in Sources */,
-				8BD297DC2A9D6B9700166209 /* DeckBaseView.swift in Sources */,
+				8B4D5A322AAA914700DBF299 /* RemoveWordView.swift in Sources */,
+				8BEEBC8B2AAE600F0081ED26 /* ThemeView.swift in Sources */,
 				8B37AD962A94153800BEE965 /* FlashCardApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8B37AD9E2A94153900BEE965 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B37ADA82A94153900BEE965 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8BECF4EA2AA7F2F9006F31DA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		8B37ADA42A94153900BEE965 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8B37AD912A94153800BEE965 /* FlashCard */;
-			targetProxy = 8B37ADA32A94153900BEE965 /* PBXContainerItemProxy */;
-		};
-		8B37ADAE2A94153900BEE965 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8B37AD912A94153800BEE965 /* FlashCard */;
-			targetProxy = 8B37ADAD2A94153900BEE965 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8B37ADB42A94153900BEE965 /* Debug */ = {
@@ -398,6 +252,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -452,6 +307,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -482,6 +338,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.needMDMA.FlashCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -514,146 +371,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.needMDMA.FlashCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = macosx;
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		8B37ADBA2A94153900BEE965 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P9C3G69FYD;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.needMDMA.FlashCardTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlashCard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FlashCard";
-			};
-			name = Debug;
-		};
-		8B37ADBB2A94153900BEE965 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P9C3G69FYD;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.needMDMA.FlashCardTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlashCard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FlashCard";
-			};
-			name = Release;
-		};
-		8B37ADBD2A94153900BEE965 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P9C3G69FYD;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.needMDMA.FlashCardUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FlashCard;
-			};
-			name = Debug;
-		};
-		8B37ADBE2A94153900BEE965 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P9C3G69FYD;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.needMDMA.FlashCardUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FlashCard;
-			};
-			name = Release;
-		};
-		8BECF4FB2AA7F2FB006F31DA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MacFlashCard/MacFlashCard.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MacFlashCard/Preview Content\"";
-				DEVELOPMENT_TEAM = P9C3G69FYD;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.needMDMA.MacFlashCard;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		8BECF4FC2AA7F2FB006F31DA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MacFlashCard/MacFlashCard.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MacFlashCard/Preview Content\"";
-				DEVELOPMENT_TEAM = P9C3G69FYD;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.needMDMA.MacFlashCard;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -676,33 +400,6 @@
 			buildConfigurations = (
 				8B37ADB72A94153900BEE965 /* Debug */,
 				8B37ADB82A94153900BEE965 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8B37ADB92A94153900BEE965 /* Build configuration list for PBXNativeTarget "FlashCardTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8B37ADBA2A94153900BEE965 /* Debug */,
-				8B37ADBB2A94153900BEE965 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8B37ADBC2A94153900BEE965 /* Build configuration list for PBXNativeTarget "FlashCardUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8B37ADBD2A94153900BEE965 /* Debug */,
-				8B37ADBE2A94153900BEE965 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8BECF4FA2AA7F2FB006F31DA /* Build configuration list for PBXNativeTarget "MacFlashCard" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8BECF4FB2AA7F2FB006F31DA /* Debug */,
-				8BECF4FC2AA7F2FB006F31DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
