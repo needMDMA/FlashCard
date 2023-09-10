@@ -8,7 +8,7 @@
 import Foundation
 
 class FlashCard: ObservableObject {
-    @Published private(set) var model: DeckContent<Constant.level> {
+    @Published private(set) var model: [DeckContent<Constant.level>] {
         didSet {
             autosave()
         }
