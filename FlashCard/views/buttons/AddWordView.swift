@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct AddWordView: View {
-    @EnvironmentObject var flashCard: FlashCard
+//    @EnvironmentObject var flashCard: FlashCard
+    let deck: [Constant.level: [DeckModel<Constant.level>.Card]]
     @State var newWord = ""
     @State var newWordTraduction = ""
     @State private var showingPopover = false
@@ -34,7 +35,7 @@ struct AddWordView: View {
                 }
             }
             Button("Add") {
-                flashCard.addWord(word: newWord, traduction: newWordTraduction)
+//                flashCard.addWord(word: newWord, traduction: newWordTraduction)
                 showingPopover = false
                 newWord = ""
                 newWordTraduction = ""
@@ -43,8 +44,8 @@ struct AddWordView: View {
     }
 }
 
-struct AddWordView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddWordView()
-    }
-}
+//struct AddWordView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddWordView()
+//    }
+//}

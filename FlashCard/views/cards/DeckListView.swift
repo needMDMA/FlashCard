@@ -8,23 +8,24 @@
 import SwiftUI
 
 struct DeckListView: View {
-    @EnvironmentObject var flashCard: FlashCard
+//    @EnvironmentObject var flashCard: FlashCard
+    let deck: [Constant.level: [DeckModel<Constant.level>.Card]]
     
     var body: some View {
         List {
             ForEach(Constant.level.allCases, id: \.self) { level in
-                deck(level).aspectRatio(5/2, contentMode: .fit)
+                deckView(level).aspectRatio(5/2, contentMode: .fit)
             }
         }
     }
     
     @ViewBuilder
-    func deck(_ level: Constant.level) -> some View {
+    func deckView(_ level: Constant.level) -> some View {
         ZStack {
             GeometryReader { geometry in
                 ZStack{
                     cardBackground(level: level)
-                    if let cards = flashCard.model.deck[level], cards.count > 0 {
+                    if let cards = deck[level], cards.count > 0 {
                         CardView(card: cards[cards.count-1], size: geometry.size)
                     } else {
                         Text(Constant.levelTitle(level: level)).bold().font(.largeTitle)
@@ -37,7 +38,7 @@ struct DeckListView: View {
     
     @ViewBuilder
     func badge(level: Constant.level, size: CGSize) -> some View {
-        let numberOfcard: String = String(flashCard.model.deck[level]?.count ?? 0)
+        let numberOfcard: String = String(deck[level]?.count ?? 0)
         let circleScale: CGFloat = 0.25
         
         ZStack {
@@ -57,8 +58,8 @@ struct DeckListView: View {
     }
 }
 
-struct DeckListView_Previews: PreviewProvider {
-    static var previews: some View {
-        DeckListView().environmentObject(FlashCard())
-    }
-}
+//struct DeckListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DeckListView().environmentObject(FlashCard())
+//    }
+//}

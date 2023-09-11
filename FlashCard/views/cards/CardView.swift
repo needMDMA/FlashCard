@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CardView: View {
-    let card: DeckContent<Constant.level>.Card
+    let card: DeckModel<Constant.level>.Card
     let size: CGSize
     @EnvironmentObject var flashCard: FlashCard
     @State var showTraduction = false
@@ -83,7 +83,7 @@ struct CardView: View {
 
 struct FlashCardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(card: DeckContent.Card(currentLevel: Constant.level.expert, word: "Dog", traduction: "Chien"), size: CGSize(width: Constant.width, height: 300))
+        CardView(card: DeckModel.Card(currentLevel: Constant.level.expert, word: "Dog", traduction: "Chien"), size: CGSize(width: Constant.width, height: 300))
             .environmentObject(FlashCard()).aspectRatio(Constant.ratio, contentMode: .fit)
     }
 }

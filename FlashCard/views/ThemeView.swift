@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct ThemeView: View {
+    @EnvironmentObject  var flashCardThemes: FlashCard
+    
     var body: some View {
         NavigationView {
             List {
-                NavigationLink("Test") {
-                    FlashCardView()
+                ForEach(flashCardThemes.model.themes) { theme in
+                    NavigationLink(theme.name) {
+                        FlashCardView(deck: theme.deck)
+                    }
                 }
             }
             .listStyle(.sidebar)

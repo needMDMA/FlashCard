@@ -11,7 +11,7 @@ import SwiftUI
 struct FlashCardApp: App {
     var body: some Scene {
         WindowGroup {
-            FlashCardView().environmentObject(FlashCard())
+            ThemeView().environmentObject(FlashCard())
                 .frame(width: Constant.width, height: Constant.height)
         }.windowResizability(.contentSize)
     }
