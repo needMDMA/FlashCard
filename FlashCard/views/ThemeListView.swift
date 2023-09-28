@@ -8,13 +8,32 @@
 import SwiftUI
 
 struct ThemeListView: View {
+    @State private var overText = false
+    let name: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Image(systemName: "mail.stack")
+            Text(name)
+            Spacer()
+            listOptionButton
+            Text("20")
+        }
+    }
+    
+    var listOptionButton: some View {
+        Button {
+            
+        } label: {
+            Image(systemName: "ellipsis.circle.fill")
+                .opacity(overText ? 1 : 0)
+        }.onHover { over in overText = over}
+            .buttonStyle(.plain)
     }
 }
 
-struct ThemeListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ThemeListView()
-    }
-}
+//struct ThemeListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ThemeListView()
+//    }
+//}

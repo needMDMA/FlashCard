@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct RemoveWordView: View {
-    let deck: [Constant.level: [DeckModel<Constant.level>.Card]]
+    @EnvironmentObject  var flashCard: FlashCard
+    let theme: String
+//    let deck: [Constant.level: [DeckModel<Constant.level>.Card]]
     @State var showingPopover = false
     
     var body: some View {
         Button {
             showingPopover = true
         }label: {
-            Text("Remove Word")
+            Image(systemName: "minus.circle")
         }.popover(isPresented: $showingPopover) {
             wordList
                 .padding()
@@ -25,13 +27,13 @@ struct RemoveWordView: View {
     
     var wordList: some View {
         List {
-//            let deck = flashCard.model.deck
+//            let deck = flashCard.themes[index].deck
             ForEach(Constant.level.allCases, id: \.self) { level in
-                if let levelWords = deck[level] {
-                    ForEach(levelWords) { word in
-                        removeWordButton(word: word.word, id: word.id)
-                    }
-                }
+//                if let levelWords = deck[level] {
+//                    ForEach(levelWords) { word in
+//                        removeWordButton(word: word.word, id: word.id)
+//                    }
+//                }
             }
         }
     }

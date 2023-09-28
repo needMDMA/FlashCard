@@ -8,21 +8,50 @@
 import SwiftUI
 
 struct ThemeView: View {
-    @EnvironmentObject  var flashCardThemes: FlashCard
+    @EnvironmentObject var flashCard: FlashCard
+    @State var newThemeName = "Theme Name"
+    @State private var isPresented = false
+    @State private var selection: String? = nil
+    @State private var newName = ""
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(flashCardThemes.model.themes) { theme in
-                    NavigationLink(theme.name) {
-                        FlashCardView(deck: theme.deck)
+        let themes = flashCard.themeNames
+        VStack {
+            NavigationSplitView {
+                List(themes, id: \.self, selection: $selection) { theme in
+                    NavigationLink {
+                        FlashCardView(theme: theme)
+                    } label: {
+                        if isPresented {
+                            TextField("Type New Name", text: $newName)
+                                .onSubmit { flashCard.renameTheme(from: theme, to: newName) }
+                        } else {
+                            Text(theme)
+                        }
+                    }.contextMenu {
+                        Button("Rename") {
+                            isPresented = true
+                        }
                     }
                 }
+                newThemeButton
+            } detail: {
+                Text("click on a theme")
             }
-            .listStyle(.sidebar)
-            
-            Text("No selection")
         }
+    }
+    
+    var newThemeButton: some View {
+        Button {
+            flashCard.addTheme(name: newThemeName)
+        } label: {
+            HStack {
+                Image(systemName: "plus.circle")
+                Text("New Theme")
+                Spacer()
+            }
+        }.buttonStyle(.plain)
+            .padding()
     }
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B0667F72AAFB32E004861FD /* TrashThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0667F62AAFB32E004861FD /* TrashThemeView.swift */; };
+		8B0667F92AAFFD1C004861FD /* ThemeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0667F82AAFFD1C004861FD /* ThemeListView.swift */; };
 		8B37AD962A94153800BEE965 /* FlashCardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B37AD952A94153800BEE965 /* FlashCardApp.swift */; };
 		8B37AD982A94153800BEE965 /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B37AD972A94153800BEE965 /* FlashCardView.swift */; };
 		8B37AD9A2A94153900BEE965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B37AD992A94153900BEE965 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B0667F62AAFB32E004861FD /* TrashThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashThemeView.swift; sourceTree = "<group>"; };
+		8B0667F82AAFFD1C004861FD /* ThemeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeListView.swift; sourceTree = "<group>"; };
 		8B37AD922A94153800BEE965 /* FlashCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B37AD952A94153800BEE965 /* FlashCardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardApp.swift; sourceTree = "<group>"; };
 		8B37AD972A94153800BEE965 /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
@@ -69,12 +73,12 @@
 		8B37AD942A94153800BEE965 /* FlashCard */ = {
 			isa = PBXGroup;
 			children = (
+				8B37AD952A94153800BEE965 /* FlashCardApp.swift */,
 				8BEEBC8D2AAE666A0081ED26 /* views */,
 				8BA5CBD52AA01EBD000502C0 /* Constant.swift */,
-				8B37AD952A94153800BEE965 /* FlashCardApp.swift */,
+				8BC787ED2A958B610021C6E6 /* FlashCard.swift */,
 				8BC787EB2A958A800021C6E6 /* DeckModel.swift */,
 				8B88EEB32AAE697800C44932 /* ThemesModel.swift */,
-				8BC787ED2A958B610021C6E6 /* FlashCard.swift */,
 				8B37AD992A94153900BEE965 /* Assets.xcassets */,
 				8B37AD9B2A94153900BEE965 /* Preview Content */,
 			);
@@ -92,8 +96,8 @@
 		8BA5CBD72AA3F33B000502C0 /* cards */ = {
 			isa = PBXGroup;
 			children = (
-				8BAC723B2AAE466F005BA8A8 /* DeckListView.swift */,
 				8B37AD972A94153800BEE965 /* FlashCardView.swift */,
+				8BAC723B2AAE466F005BA8A8 /* DeckListView.swift */,
 				8BD297D92A9D48DD00166209 /* CardView.swift */,
 			);
 			path = cards;
@@ -104,6 +108,7 @@
 			children = (
 				8B4D5A2E2AA9FD7400DBF299 /* AddWordView.swift */,
 				8B4D5A312AAA914700DBF299 /* RemoveWordView.swift */,
+				8B0667F62AAFB32E004861FD /* TrashThemeView.swift */,
 			);
 			path = buttons;
 			sourceTree = "<group>";
@@ -111,9 +116,10 @@
 		8BEEBC8D2AAE666A0081ED26 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				8BEEBC8C2AAE664F0081ED26 /* buttons */,
 				8BEEBC8A2AAE600F0081ED26 /* ThemeView.swift */,
+				8BEEBC8C2AAE664F0081ED26 /* buttons */,
 				8BA5CBD72AA3F33B000502C0 /* cards */,
+				8B0667F82AAFFD1C004861FD /* ThemeListView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -198,7 +204,9 @@
 				8BD297DA2A9D48DD00166209 /* CardView.swift in Sources */,
 				8B4D5A322AAA914700DBF299 /* RemoveWordView.swift in Sources */,
 				8BEEBC8B2AAE600F0081ED26 /* ThemeView.swift in Sources */,
+				8B0667F92AAFFD1C004861FD /* ThemeListView.swift in Sources */,
 				8B37AD962A94153800BEE965 /* FlashCardApp.swift in Sources */,
+				8B0667F72AAFB32E004861FD /* TrashThemeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

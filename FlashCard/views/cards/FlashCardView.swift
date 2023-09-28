@@ -8,19 +8,18 @@
 import SwiftUI
 
 struct FlashCardView: View {
-    let deck: [Constant.level: [DeckModel<Constant.level>.Card]]
+    @EnvironmentObject  var flashCard: FlashCard
+    let theme: String
 
     var body: some View {
         VStack{
-            AddWordView(deck: deck)
-            DeckListView(deck: deck)
-            RemoveWordView(deck: deck)
+            DeckListView(theme: theme)
+            HStack {
+                Spacer()
+                AddWordView(theme: theme)
+                RemoveWordView(theme: theme)
+                TrashThemeView(theme: theme)
+            }.padding()
         }
     }
 }
-
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FlashCardView()
-//    }
-//}

@@ -7,36 +7,17 @@
 
 import Foundation
 
-struct ThemesModel<levels: Hashable>  {
-    private(set) var themes: [DeckModel<levels>] = []
-
-
-//    init() {
-//        themes.append(DeckModel<levels>())
+struct ThemesModel<deck: Hashable> {
+    private(set) var themes: [String: deck] = [:]
+    
+    mutating func addTheme(name: String, deck: deck) {
+        themes[name] = deck
+    }
+    
+//    mutating func updateTheme(theme name: String, deck: deck) {
+//        themes.updateValue(deck, forKey: name)
 //    }
-
-    mutating func addTheme(themeName: String) {
-        themes.append(DeckModel<levels>(name: themeName))
-    }
-
-    func addWord(theme: String, word: String, traduction: String) {
-//        if let deck = themes[theme]?.deck {
-//            deck.addWord(level: Constant.level.beginner, word: word, traduction: traduction)
-//        }
-    }
-
-    func promoteWord(card: DeckModel<Constant.level>.Card) {
-//        model.promoteWord(card: card, promotingTo: Constant.level(rawValue: card.currentLevel.rawValue + 1))
-    }
-
-    func downgradeWord(card: DeckModel<Constant.level>.Card) {
-//        model.downgradeWord(card: card, downgradeTo: Constant.level(rawValue: card.currentLevel.rawValue - 1))
-    }
-
-    func removeWord(id: UUID) {
-//        model.removeWord(id: id)
-    }
-
+//
 //    func json() throws -> Data {
 //        try JSONEncoder().encode(self)
 //    }
@@ -49,7 +30,13 @@ struct ThemesModel<levels: Hashable>  {
 //    init(json: Data) throws {
 //        self = try JSONDecoder().decode(ThemesModel.self, from: json)
 //    }
-
-    init() { }
-
+//
+//    init() { }
+    
+//    struct Theme: Identifiable {
+//        var name: String
+//        var deck: deck
+//        var id = UUID()
+//    }
+    
 }

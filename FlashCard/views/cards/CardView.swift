@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct CardView: View {
-    let card: DeckModel<Constant.level>.Card
-    let size: CGSize
     @EnvironmentObject var flashCard: FlashCard
+    let card: DeckModel<Constant.level>.Card
+    let theme: String
+    let size: CGSize
     @State var showTraduction = false
     
     var body: some View {
@@ -48,7 +49,7 @@ struct CardView: View {
     
     var correctButton: some View {
         Button {
-            flashCard.promoteWord(card: card)
+            flashCard.promoteWord(theme: theme, card: card)
         }label: {
             Image(systemName: "checkmark")
         }
@@ -58,7 +59,7 @@ struct CardView: View {
     
     var wrongButton: some View {
         Button {
-            flashCard.downgradeWord(card: card)
+            flashCard.downgradeWord(theme: theme, card: card)
         } label: {
             Image(systemName: "xmark")
         }.buttonStyle(.plain)
@@ -78,12 +79,5 @@ struct CardView: View {
             return 1
         }
         return 0
-    }
-}
-
-struct FlashCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView(card: DeckModel.Card(currentLevel: Constant.level.expert, word: "Dog", traduction: "Chien"), size: CGSize(width: Constant.width, height: 300))
-            .environmentObject(FlashCard()).aspectRatio(Constant.ratio, contentMode: .fit)
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Constant {
     static let width: CGFloat = 600
-    static let height:CGFloat = 840
+    static let height:CGFloat = 620
     static let ratio: CGFloat = 5/2
     
     static let cornerRadius: CGFloat = 40.0

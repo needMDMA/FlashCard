@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct TrashThemeView: View {
+    @EnvironmentObject  var flashCard: FlashCard
+    let theme: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            
+        }label: {
+            Image(systemName: "trash")
+        }
     }
 }
 
-struct TrashThemeView_Previews: PreviewProvider {
-    static var previews: some View {
-        TrashThemeView()
-    }
-}
+//struct TrashThemeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TrashThemeView()
+//    }
+//}

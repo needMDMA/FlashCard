@@ -7,16 +7,12 @@
 
 import Foundation
 
-struct DeckModel<levels: Hashable>: Identifiable {
+struct DeckModel<levels: Hashable>: Hashable {
     private let maxScore = 2
-    private(set) var id = UUID()
     private(set) var deck: [levels: [Card]] = [:]
-    var name: String
     
-    init(name: String) {
-        self.name = name
-    }
-   
+    init() { }
+       
     mutating func addWord(level: levels, word: String, traduction: String) {
         let newCard = Card(currentLevel: level, word: word, traduction: traduction)
         goBottom(of: level, for: newCard)
@@ -88,7 +84,7 @@ struct DeckModel<levels: Hashable>: Identifiable {
         }
     }
 
-    struct Card: Identifiable {
+    struct Card: Identifiable, Hashable {
         var currentLevel: levels
         var score: Int = 0
         let word: String

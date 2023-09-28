@@ -8,56 +8,67 @@
 import Foundation
 
 class FlashCard: ObservableObject {
-    @Published private(set) var model: ThemesModel<Constant.level>
+    @Published private(set) var themes: [String: DeckModel<Constant.level>] = [:]
+    
+    init() { 
+        for name in ["a"] {
+            var deck = DeckModel<Constant.level>()
+            deck.addWord(level: Constant.level.beginner, word: "AAA", traduction: "AAA")
+            themes[name] = deck
+        }
+    }
+    
+    var themeNames: [String] {
+        print(Array(themes.keys.sorted()))
+        return Array(themes.keys.sorted())
+    }
+    
+    func deck(theme: String) -> [Constant.level : [DeckModel<Constant.level>.Card]] {
+        themes[theme]!.deck
+    }
+    
+    func firstCard(theme: String, level: Constant.level) -> DeckModel<Constant.level>.Card? {
+        if let cards = themes[theme]!.deck[level], cards.count > 0 {
+            return cards[cards.count-1]
+        }
+        return nil
+    }
 
-    init() {
-//        if let url = Autosave.url, let autosavedData = try? ThemesModel<Constant.level>(url: url) {
-//            model = autosavedData
-//        } else {
-//            model = ThemesModel<Constant.level>()
-//        }
-        model = ThemesModel<Constant.level>()
-        model.addTheme(themeName: "a")
-        model.addTheme(themeName: "b")
-        model.addTheme(themeName: "c")
+    func addTheme(name: String) {
+        themes[name] = DeckModel<Constant.level>()
     }
     
-//    private struct Autosave {
-//        static let filename = "deck.data"
-//        static var url: URL? {
-//            let fileDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-//            return fileDirectory?.appendingPathComponent(filename)
-//        }
-//    }
-    
-//    func autosave() {
-//        if let url = Autosave.url {
-//            save(to: url)
-//        }
-//    }
-//
-//    private func save(to url: URL) {
-//        do {
-//            let data = try model.json()
-//            try data.write(to: url)
-//        } catch {
-//            print("Failed to save")
-//        }
-//    }
+    func renameTheme(from name: String, to new: String) {
+        if let theme = themes[name] {
+            themes.removeValue(forKey: name)
+            themes[new] = theme
+        }
+    }
 
-    func addWord(index: Int, word: String, traduction: String) {
-//        model.addWord(themeName: "Default", word: word, traduction: traduction)
+    func addWord(themeName: String, word: String, traduction: String) {
+//        var deck = themes.remove(at: index)
+//        deck.addWord(level: Constant.level.beginner, word: word, traduction: traduction)
+//        themes.append(deck)
     }
-    
-    func promoteWord(card: DeckModel<Constant.level>.Card) {
-//        model.promoteWord(card: card, promotingTo: Constant.level(rawValue: card.currentLevel.rawValue + 1))
+
+    func promoteWord(theme: String, card: DeckModel<Constant.level>.Card) {
+        if var deck = themes[theme] {
+            deck.promoteWord(card: card, promotingTo: Constant.level(rawValue: card.currentLevel.rawValue + 1))
+            themes.updateValue(deck, forKey: theme)
+        }
     }
-    
-    func downgradeWord(card: DeckModel<Constant.level>.Card) {
-//        model.downgradeWord(card: card, downgradeTo: Constant.level(rawValue: card.currentLevel.rawValue - 1))
+
+    func downgradeWord(theme: String, card: DeckModel<Constant.level>.Card) {
+        if var deck = themes[theme] {
+            deck.downgradeWord(card: card, downgradeTo: Constant.level(rawValue: card.currentLevel.rawValue - 1))
+            themes.updateValue(deck, forKey: theme)
+        }
     }
-    
-    func removeWord(id: UUID) {
-//        model.removeWord(id: id)
-    }
+
+//    func removeWord(themeName: String, id: UUID) {
+//        if var deck = themesModel.themes[themeName] {
+//            deck.removeWord(id: id)
+//            themesModel.updateTheme(theme: themeName, deck: deck)
+//        }
+//    }
 }
