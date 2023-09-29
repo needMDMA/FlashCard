@@ -9,16 +9,17 @@ import SwiftUI
 
 struct FlashCardView: View {
     @EnvironmentObject  var flashCard: FlashCard
-    let theme: String
+    let index: Int
 
     var body: some View {
+        let theme = flashCard.themes[index]
         VStack{
-            DeckListView(theme: theme)
+            DeckListView(index: index)
             HStack {
                 Spacer()
-                AddWordView(theme: theme)
-                RemoveWordView(theme: theme)
-                TrashThemeView(theme: theme)
+                AddWordView(index: index)
+                RemoveWordView(index: index)
+                TrashThemeView(index: index)
             }.padding()
         }
     }

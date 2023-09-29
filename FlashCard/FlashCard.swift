@@ -8,61 +8,60 @@
 import Foundation
 
 class FlashCard: ObservableObject {
-    @Published private(set) var themes: [String: DeckModel<Constant.level>] = [:]
+    @Published private(set) var themes: [DeckModel<Constant.level>] = []
     
     init() { 
-        for name in ["a"] {
-            var deck = DeckModel<Constant.level>()
-            deck.addWord(level: Constant.level.beginner, word: "AAA", traduction: "AAA")
-            themes[name] = deck
+        for name in ["a", "b"] {
+            addTheme(themeName: name)
         }
     }
     
     var themeNames: [String] {
-        print(Array(themes.keys.sorted()))
-        return Array(themes.keys.sorted())
+        themes.map { $0.name }
     }
     
-    func deck(theme: String) -> [Constant.level : [DeckModel<Constant.level>.Card]] {
-        themes[theme]!.deck
+    func deck(themeName: String) -> [Constant.level : [DeckModel<Constant.level>.Card]] {
+        themes.filter { $0.name == themeName }[0].deck
     }
     
-    func firstCard(theme: String, level: Constant.level) -> DeckModel<Constant.level>.Card? {
-        if let cards = themes[theme]!.deck[level], cards.count > 0 {
+    func firstCard(index: Int, level: Constant.level) -> DeckModel<Constant.level>.Card? {
+        let deck = themes[index].deck
+        if let cards = deck[level], cards.count > 0 {
             return cards[cards.count-1]
         }
         return nil
     }
 
-    func addTheme(name: String) {
-        themes[name] = DeckModel<Constant.level>()
+    func addTheme(themeName: String) {
+        var newTheme = DeckModel<Constant.level>(id: themes.count, name: themeName)
+        newTheme.addWord(level: Constant.level.beginner, word: "AAA", traduction: "BBB")
+        themes.append(newTheme)
     }
     
-    func renameTheme(from name: String, to new: String) {
-        if let theme = themes[name] {
-            themes.removeValue(forKey: name)
-            themes[new] = theme
-        }
+    func renameTheme(index: Int, to newName: String) {
+       themes[index].rename(newName)
     }
 
-    func addWord(themeName: String, word: String, traduction: String) {
-//        var deck = themes.remove(at: index)
-//        deck.addWord(level: Constant.level.beginner, word: word, traduction: traduction)
-//        themes.append(deck)
+    func addWord(index: Int, word: String, traduction: String) {
+        themes[index].addWord(
+            level: Constant.level.beginner,
+            word: word,
+            traduction: traduction
+        )
     }
 
-    func promoteWord(theme: String, card: DeckModel<Constant.level>.Card) {
-        if var deck = themes[theme] {
-            deck.promoteWord(card: card, promotingTo: Constant.level(rawValue: card.currentLevel.rawValue + 1))
-            themes.updateValue(deck, forKey: theme)
-        }
+    func promoteWord(index: Int, card: DeckModel<Constant.level>.Card) {
+        themes[index].promoteWord(
+            card: card,
+            promotingTo: Constant.level(rawValue: card.currentLevel.rawValue + 1)
+        )
     }
 
-    func downgradeWord(theme: String, card: DeckModel<Constant.level>.Card) {
-        if var deck = themes[theme] {
-            deck.downgradeWord(card: card, downgradeTo: Constant.level(rawValue: card.currentLevel.rawValue - 1))
-            themes.updateValue(deck, forKey: theme)
-        }
+    func downgradeWord(index: Int, card: DeckModel<Constant.level>.Card) {
+        themes[index].downgradeWord(
+            card: card,
+            downgradeTo: Constant.level(rawValue: card.currentLevel.rawValue - 1)
+        )
     }
 
 //    func removeWord(themeName: String, id: UUID) {

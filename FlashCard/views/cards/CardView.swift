@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CardView: View {
     @EnvironmentObject var flashCard: FlashCard
+    let index: Int
     let card: DeckModel<Constant.level>.Card
-    let theme: String
     let size: CGSize
     @State var showTraduction = false
     
@@ -49,7 +49,7 @@ struct CardView: View {
     
     var correctButton: some View {
         Button {
-            flashCard.promoteWord(theme: theme, card: card)
+            flashCard.promoteWord(index: index, card: card)
         }label: {
             Image(systemName: "checkmark")
         }
@@ -59,7 +59,7 @@ struct CardView: View {
     
     var wrongButton: some View {
         Button {
-            flashCard.downgradeWord(theme: theme, card: card)
+            flashCard.downgradeWord(index: index, card: card)
         } label: {
             Image(systemName: "xmark")
         }.buttonStyle(.plain)

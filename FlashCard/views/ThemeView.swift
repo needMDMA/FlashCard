@@ -15,18 +15,20 @@ struct ThemeView: View {
     @State private var newName = ""
     
     var body: some View {
-        let themes = flashCard.themeNames
+        let themes = flashCard.themes
         VStack {
             NavigationSplitView {
                 List(themes, id: \.self, selection: $selection) { theme in
                     NavigationLink {
-                        FlashCardView(theme: theme)
+                        FlashCardView(index: theme.id)
                     } label: {
                         if isPresented {
-                            TextField("Type New Name", text: $newName)
-                                .onSubmit { flashCard.renameTheme(from: theme, to: newName) }
+                            TextField("Type New Name", text: $newName).onSubmit {
+                                flashCard.renameTheme(index: theme.id, to: "Something")
+                                isPresented = false
+                            }
                         } else {
-                            Text(theme)
+                            Text(theme.name)
                         }
                     }.contextMenu {
                         Button("Rename") {
@@ -43,7 +45,7 @@ struct ThemeView: View {
     
     var newThemeButton: some View {
         Button {
-            flashCard.addTheme(name: newThemeName)
+            flashCard.addTheme(themeName: newThemeName)
         } label: {
             HStack {
                 Image(systemName: "plus.circle")

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RemoveWordView: View {
     @EnvironmentObject  var flashCard: FlashCard
-    let theme: String
+    let index: Int
 //    let deck: [Constant.level: [DeckModel<Constant.level>.Card]]
     @State var showingPopover = false
     

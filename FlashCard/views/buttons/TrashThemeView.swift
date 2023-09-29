@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TrashThemeView: View {
     @EnvironmentObject  var flashCard: FlashCard
-    let theme: String
+    let index: Int
     
     var body: some View {
         Button {

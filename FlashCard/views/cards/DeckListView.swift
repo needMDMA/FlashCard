@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DeckListView: View {
     @EnvironmentObject var flashCard: FlashCard
-    let theme: String
+    let index: Int
     
     var body: some View {
         List {
@@ -25,8 +25,8 @@ struct DeckListView: View {
             GeometryReader { geometry in
                 ZStack{
                     cardBackground(level: level)
-                    if let firstCard = flashCard.firstCard(theme: theme, level: level) {
-                        CardView(card: firstCard, theme: theme, size: geometry.size)
+                    if let card = flashCard.firstCard(index: index, level: level) {
+                        CardView(index: index, card: card, size: geometry.size)
                     } else {
                         Text(Constant.levelTitle(level: level))
                             .bold()
@@ -41,7 +41,7 @@ struct DeckListView: View {
     
     @ViewBuilder
     func badge(level: Constant.level, size: CGSize) -> some View {
-        let deck = flashCard.deck(theme: theme)
+        let deck = flashCard.themes[index].deck
         let numberOfcard: String = String(deck[level]?.count ?? 0)
         let circleScale: CGFloat = 0.25
         
