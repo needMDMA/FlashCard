@@ -12,27 +12,30 @@ struct ThemeView: View {
     @State var newThemeName = "Theme Name"
     @State private var isPresented = false
     @State private var selection: String? = nil
-    @State private var newName = ""
     
     var body: some View {
-        let themes = flashCard.themes
         VStack {
             NavigationSplitView {
-                List(themes, id: \.self, selection: $selection) { theme in
+                List(flashCard.themes.indices, id: \.self, selection: $selection) { index in
+                    let theme = flashCard.themes[index]
                     NavigationLink {
                         FlashCardView(index: theme.id)
-                    } label: {
+                    }label: {
                         if isPresented {
-                            TextField("Type New Name", text: $newName).onSubmit {
-                                flashCard.renameTheme(index: theme.id, to: "Something")
+                            TextField(text: $flashCard.themes[index].name) {
+                                Text(theme.name)
+                            }.onSubmit {
                                 isPresented = false
                             }
                         } else {
                             Text(theme.name)
                         }
                     }.contextMenu {
-                        Button("Rename") {
+                        Button("Rename"){
                             isPresented = true
+                        }
+                        Button("Delete") {
+                            flashCard.removeTheme(index: index)
                         }
                     }
                 }

@@ -8,7 +8,7 @@
 import Foundation
 
 class FlashCard: ObservableObject {
-    @Published private(set) var themes: [DeckModel<Constant.level>] = []
+    @Published var themes: [DeckModel<Constant.level>] = []
     
     init() { 
         for name in ["a", "b"] {
@@ -40,6 +40,11 @@ class FlashCard: ObservableObject {
     
     func renameTheme(index: Int, to newName: String) {
        themes[index].rename(newName)
+    }
+    
+    func removeTheme(index: Int) {
+        print("remove \(index)")
+        themes.remove(at: index)
     }
 
     func addWord(index: Int, word: String, traduction: String) {

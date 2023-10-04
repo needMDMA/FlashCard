@@ -11,7 +11,7 @@ struct DeckModel<levels: Hashable>: Hashable, Identifiable {
     private let maxScore = 2
     private(set) var deck: [levels: [Card]] = [:]
     private(set) var id: Int
-    private(set) var name: String
+    var name: String
        
     
     mutating func rename(_ newName: String) {
