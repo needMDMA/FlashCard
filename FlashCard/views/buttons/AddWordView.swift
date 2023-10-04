@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AddWordView: View {
     @EnvironmentObject var flashCard: FlashCard
+    let index: Int
+    
     @State var newWord = ""
     @State var newWordTraduction = ""
     @State private var showingPopover = false
@@ -17,7 +19,7 @@ struct AddWordView: View {
         Button {
             showingPopover = true
         }label: {
-            Text("Add New Word")
+            Image(systemName: "plus.circle")
         }.popover(isPresented: $showingPopover) {
             addWord
                 .padding()
@@ -34,17 +36,11 @@ struct AddWordView: View {
                 }
             }
             Button("Add") {
-                flashCard.addWord(word: newWord, traduction: newWordTraduction)
+                flashCard.addWord(index: index, word: newWord, traduction: newWordTraduction)
                 showingPopover = false
                 newWord = ""
                 newWordTraduction = ""
             }
         }
-    }
-}
-
-struct AddWordView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddWordView()
     }
 }

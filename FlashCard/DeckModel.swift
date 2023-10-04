@@ -7,10 +7,16 @@
 
 import Foundation
 
-struct DeckContent<levels: Codable>: Codable where levels: Hashable {
-    private var maxScore = 2
+struct DeckModel<levels: Hashable>: Hashable, Identifiable {
+    private let maxScore = 2
     private(set) var deck: [levels: [Card]] = [:]
-    var url = URL(string: " ")
+    private(set) var id: Int
+    var name: String
+       
+    
+    mutating func rename(_ newName: String) {
+        name = newName
+    }
     
     mutating func addWord(level: levels, word: String, traduction: String) {
         let newCard = Card(currentLevel: level, word: word, traduction: traduction)
@@ -83,24 +89,7 @@ struct DeckContent<levels: Codable>: Codable where levels: Hashable {
         }
     }
 
-    func json() throws -> Data {
-        try JSONEncoder().encode(self)
-    }
-
-    init(url: URL) throws {
-        let data = try Data(contentsOf: url)
-        self = try DeckContent(json: data)
-    }
-    
-    init(json: Data) throws {
-        self = try JSONDecoder().decode(DeckContent.self, from: json)
-    }
-    
-    init() {}
-    
-
-    
-    struct Card: Identifiable, Codable {
+    struct Card: Identifiable, Hashable {
         var currentLevel: levels
         var score: Int = 0
         let word: String

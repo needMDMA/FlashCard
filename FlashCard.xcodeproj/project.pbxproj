@@ -7,21 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B0667F72AAFB32E004861FD /* TrashThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0667F62AAFB32E004861FD /* TrashThemeView.swift */; };
+		8B0667F92AAFFD1C004861FD /* ThemeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0667F82AAFFD1C004861FD /* ThemeListView.swift */; };
 		8B37AD962A94153800BEE965 /* FlashCardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B37AD952A94153800BEE965 /* FlashCardApp.swift */; };
 		8B37AD982A94153800BEE965 /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B37AD972A94153800BEE965 /* FlashCardView.swift */; };
 		8B37AD9A2A94153900BEE965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B37AD992A94153900BEE965 /* Assets.xcassets */; };
 		8B37AD9D2A94153900BEE965 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B37AD9C2A94153900BEE965 /* Preview Assets.xcassets */; };
 		8B4D5A2F2AA9FD7400DBF299 /* AddWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D5A2E2AA9FD7400DBF299 /* AddWordView.swift */; };
 		8B4D5A322AAA914700DBF299 /* RemoveWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D5A312AAA914700DBF299 /* RemoveWordView.swift */; };
+		8B88EEB42AAE697800C44932 /* ThemesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B88EEB32AAE697800C44932 /* ThemesModel.swift */; };
 		8BA5CBD62AA01EBD000502C0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5CBD52AA01EBD000502C0 /* Constant.swift */; };
 		8BAC723C2AAE466F005BA8A8 /* DeckListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC723B2AAE466F005BA8A8 /* DeckListView.swift */; };
-		8BC787EC2A958A800021C6E6 /* DeckContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC787EB2A958A800021C6E6 /* DeckContent.swift */; };
+		8BC787EC2A958A800021C6E6 /* DeckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC787EB2A958A800021C6E6 /* DeckModel.swift */; };
 		8BC787EE2A958B610021C6E6 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC787ED2A958B610021C6E6 /* FlashCard.swift */; };
 		8BD297DA2A9D48DD00166209 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD297D92A9D48DD00166209 /* CardView.swift */; };
 		8BEEBC8B2AAE600F0081ED26 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEEBC8A2AAE600F0081ED26 /* ThemeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B0667F62AAFB32E004861FD /* TrashThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashThemeView.swift; sourceTree = "<group>"; };
+		8B0667F82AAFFD1C004861FD /* ThemeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeListView.swift; sourceTree = "<group>"; };
 		8B37AD922A94153800BEE965 /* FlashCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B37AD952A94153800BEE965 /* FlashCardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardApp.swift; sourceTree = "<group>"; };
 		8B37AD972A94153800BEE965 /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
@@ -29,9 +34,10 @@
 		8B37AD9C2A94153900BEE965 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8B4D5A2E2AA9FD7400DBF299 /* AddWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordView.swift; sourceTree = "<group>"; };
 		8B4D5A312AAA914700DBF299 /* RemoveWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveWordView.swift; sourceTree = "<group>"; };
+		8B88EEB32AAE697800C44932 /* ThemesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesModel.swift; sourceTree = "<group>"; };
 		8BA5CBD52AA01EBD000502C0 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		8BAC723B2AAE466F005BA8A8 /* DeckListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListView.swift; sourceTree = "<group>"; };
-		8BC787EB2A958A800021C6E6 /* DeckContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckContent.swift; sourceTree = "<group>"; };
+		8BC787EB2A958A800021C6E6 /* DeckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckModel.swift; sourceTree = "<group>"; };
 		8BC787ED2A958B610021C6E6 /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
 		8BD297D92A9D48DD00166209 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		8BEEBC8A2AAE600F0081ED26 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
@@ -67,11 +73,12 @@
 		8B37AD942A94153800BEE965 /* FlashCard */ = {
 			isa = PBXGroup;
 			children = (
+				8B37AD952A94153800BEE965 /* FlashCardApp.swift */,
 				8BEEBC8D2AAE666A0081ED26 /* views */,
 				8BA5CBD52AA01EBD000502C0 /* Constant.swift */,
-				8B37AD952A94153800BEE965 /* FlashCardApp.swift */,
-				8BC787EB2A958A800021C6E6 /* DeckContent.swift */,
 				8BC787ED2A958B610021C6E6 /* FlashCard.swift */,
+				8BC787EB2A958A800021C6E6 /* DeckModel.swift */,
+				8B88EEB32AAE697800C44932 /* ThemesModel.swift */,
 				8B37AD992A94153900BEE965 /* Assets.xcassets */,
 				8B37AD9B2A94153900BEE965 /* Preview Content */,
 			);
@@ -89,8 +96,8 @@
 		8BA5CBD72AA3F33B000502C0 /* cards */ = {
 			isa = PBXGroup;
 			children = (
-				8BAC723B2AAE466F005BA8A8 /* DeckListView.swift */,
 				8B37AD972A94153800BEE965 /* FlashCardView.swift */,
+				8BAC723B2AAE466F005BA8A8 /* DeckListView.swift */,
 				8BD297D92A9D48DD00166209 /* CardView.swift */,
 			);
 			path = cards;
@@ -101,6 +108,7 @@
 			children = (
 				8B4D5A2E2AA9FD7400DBF299 /* AddWordView.swift */,
 				8B4D5A312AAA914700DBF299 /* RemoveWordView.swift */,
+				8B0667F62AAFB32E004861FD /* TrashThemeView.swift */,
 			);
 			path = buttons;
 			sourceTree = "<group>";
@@ -108,9 +116,10 @@
 		8BEEBC8D2AAE666A0081ED26 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				8BEEBC8C2AAE664F0081ED26 /* buttons */,
 				8BEEBC8A2AAE600F0081ED26 /* ThemeView.swift */,
+				8BEEBC8C2AAE664F0081ED26 /* buttons */,
 				8BA5CBD72AA3F33B000502C0 /* cards */,
+				8B0667F82AAFFD1C004861FD /* ThemeListView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -187,14 +196,17 @@
 			files = (
 				8BA5CBD62AA01EBD000502C0 /* Constant.swift in Sources */,
 				8BC787EE2A958B610021C6E6 /* FlashCard.swift in Sources */,
-				8BC787EC2A958A800021C6E6 /* DeckContent.swift in Sources */,
+				8BC787EC2A958A800021C6E6 /* DeckModel.swift in Sources */,
 				8BAC723C2AAE466F005BA8A8 /* DeckListView.swift in Sources */,
 				8B37AD982A94153800BEE965 /* FlashCardView.swift in Sources */,
 				8B4D5A2F2AA9FD7400DBF299 /* AddWordView.swift in Sources */,
+				8B88EEB42AAE697800C44932 /* ThemesModel.swift in Sources */,
 				8BD297DA2A9D48DD00166209 /* CardView.swift in Sources */,
 				8B4D5A322AAA914700DBF299 /* RemoveWordView.swift in Sources */,
 				8BEEBC8B2AAE600F0081ED26 /* ThemeView.swift in Sources */,
+				8B0667F92AAFFD1C004861FD /* ThemeListView.swift in Sources */,
 				8B37AD962A94153800BEE965 /* FlashCardApp.swift in Sources */,
+				8B0667F72AAFB32E004861FD /* TrashThemeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
