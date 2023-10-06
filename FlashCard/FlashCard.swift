@@ -42,9 +42,11 @@ class FlashCard: ObservableObject {
        themes[index].rename(newName)
     }
     
-    func removeTheme(index: Int) {
-        print("remove \(index)")
-        themes.remove(at: index)
+    func removeTheme(id: Int) {
+        themes.remove(at: id)
+        for i in 0..<themes.count {
+            themes[i].newId(id: i)
+        }
     }
 
     func addWord(index: Int, word: String, traduction: String) {

@@ -35,7 +35,7 @@ struct ThemeView: View {
                             isPresented = true
                         }
                         Button("Delete") {
-                            flashCard.removeTheme(index: index)
+                            flashCard.removeTheme(id: index)
                         }
                     }
                 }

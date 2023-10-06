@@ -18,6 +18,10 @@ struct DeckModel<levels: Hashable>: Hashable, Identifiable {
         name = newName
     }
     
+    mutating func newId(id: Int) {
+        self.id = id
+    }
+    
     mutating func addWord(level: levels, word: String, traduction: String) {
         let newCard = Card(currentLevel: level, word: word, traduction: traduction)
         goBottom(of: level, for: newCard)
