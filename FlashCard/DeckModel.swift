@@ -7,12 +7,16 @@
 
 import Foundation
 
-struct DeckModel<levels: Hashable>: Hashable, Identifiable {
-    private let maxScore = 2
+struct DeckModel<levels: Codable>: Identifiable, Codable where levels: Hashable {
+    private var maxScore = 2
     private(set) var deck: [levels: [Card]] = [:]
     private(set) var id: Int
     var name: String
-       
+
+    init(id: Int, name: String) {
+        self.id = id
+        self.name = name
+    }
     
     mutating func rename(_ newName: String) {
         name = newName
@@ -93,7 +97,7 @@ struct DeckModel<levels: Hashable>: Hashable, Identifiable {
         }
     }
 
-    struct Card: Identifiable, Hashable {
+    struct Card: Identifiable, Hashable, Codable {
         var currentLevel: levels
         var score: Int = 0
         let word: String
