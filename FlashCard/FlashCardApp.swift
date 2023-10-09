@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct FlashCardApp: App {
     var body: some Scene {
         WindowGroup {
-            ThemeView().environmentObject(FlashCard())
-                .frame(width: Constant.width, height: Constant.height)
-        }.windowResizability(.contentSize)
+            ThemeView()
+        }
+        .modelContainer(for: [FlashCard.self])
     }
 }

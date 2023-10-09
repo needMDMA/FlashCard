@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ThemeView: View {
-    @EnvironmentObject var flashCard: FlashCard
+    @Query() var flashCard: FlashCard
+//    @EnvironmentObject var flashCard: FlashCard
     @State var newThemeName = "Theme Name"
     @State private var isPresented = false
     @State private var selection: String? = nil
@@ -21,15 +23,16 @@ struct ThemeView: View {
                     NavigationLink {
                         FlashCardView(index: theme.id)
                     }label: {
-                        if isPresented {
-                            TextField(text: $flashCard.themes[index].name) {
-                                Text(theme.name)
-                            }.onSubmit {
-                                isPresented = false
-                            }
-                        } else {
-                            Text(theme.name)
-                        }
+//                        if isPresented {
+//                            TextField(text: $flashCard.themes[index].name) {
+//                                Text(theme.name)
+//                            }.onSubmit {
+//                                isPresented = false
+//                            }
+//                        } else {
+//                            Text(theme.name)
+//                        }
+                        Text("Temp")
                     }.contextMenu {
                         Button("Rename"){
                             isPresented = true

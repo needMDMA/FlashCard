@@ -6,11 +6,14 @@
 //
 
 import Foundation
+import SwiftData
 
+@Model
 class FlashCard: ObservableObject {
-    @Published var themes: [DeckModel<Constant.level>] = []
+    var themes: [DeckModel<Constant.level>]
     
     init() { 
+        self.themes = []
         for name in ["a", "b"] {
             addTheme(themeName: name)
         }
