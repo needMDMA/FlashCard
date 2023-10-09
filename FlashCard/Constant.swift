@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Constant {
+struct Constant: Codable {
     static let width: CGFloat = 600
     static let height:CGFloat = 620
     static let ratio: CGFloat = 5/2

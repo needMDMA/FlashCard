@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ThemeView: View {
-    @EnvironmentObject var flashCard: FlashCard
+    @ObservedObject var flashCard: FlashCard
     @State var newThemeName = "Theme Name"
     @State private var isPresented = false
     @State private var selection: String? = nil
@@ -62,6 +62,6 @@ struct ThemeView: View {
 
 struct ThemeView_Previews: PreviewProvider {
     static var previews: some View {
-        ThemeView().environmentObject(FlashCard())
+        ThemeView(flashCard: FlashCard())
     }
 }

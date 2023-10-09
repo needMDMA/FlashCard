@@ -6,15 +6,32 @@
 //
 
 import Foundation
+import UniformTypeIdentifiers
+import SwiftUI
 
-class FlashCard: ObservableObject {
-    @Published var themes: [DeckModel<Constant.level>] = []
+class FlashCard: ReferenceFileDocument {
+    func snapshot(contentType: UTType) throws -> Data {
+        try JSONEncoder().encode(themes)
+    }
     
-    init() { 
-        for name in ["a", "b"] {
-            addTheme(themeName: name)
+    func fileWrapper(snapshot: Data, configuration: WriteConfiguration) throws -> FileWrapper {
+        return FileWrapper(regularFileWithContents: snapshot)
+    }
+        
+    static var readableContentTypes: [UTType] { [.json] }
+    
+    required init(configuration: ReadConfiguration) throws {
+        if let data = configuration.file.regularFileContents {
+            themes = try JSONDecoder().decode([DeckModel<Constant.level>].self, from: data)
+        } else {
+            throw CocoaError(.fileReadCorruptFile)
         }
     }
+    
+    init() { }
+
+    @Published var themes: [DeckModel<Constant.level>] = []
+    
     
     var themeNames: [String] {
         themes.map { $0.name }

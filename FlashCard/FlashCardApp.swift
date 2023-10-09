@@ -10,8 +10,9 @@ import SwiftUI
 @main
 struct FlashCardApp: App {
     var body: some Scene {
-        WindowGroup {
-            ThemeView().environmentObject(FlashCard())
+        DocumentGroup(newDocument: { FlashCard() }) { config in
+            ThemeView(flashCard: config.document)
+//                .environmentObject(FlashCard())
                 .frame(width: Constant.width, height: Constant.height)
         }.windowResizability(.contentSize)
     }
